@@ -7,6 +7,7 @@ heat_template_version: 2015-10-15
 # The resources section defines what OpenStack resources are to be deployed and
 # how they should be configured.
 resources:
+  # Setting up resources (Instance and IP)
   puppet_server_floating_ip:
     type: OS::Nova::FloatingIP
     properties:
@@ -30,6 +31,31 @@ resources:
       floating_ip: { get_resource: puppet_server_floating_ip }
       server_id: { get_resource: puppet_server }
 
+  # Configure hostname and /etc/hosts
+  hosts_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config:
+        str_replace:
+          template: |
+            #!/bin/bash
+            hostname puppet-server
+            echo "#Puppet needs to resolv server and client IP" >> /etc/hosts
+            echo "127.0.0.1 puppet-server" >> /etc/hosts
+            echo "$puppet_server_ip puppet-server" >> /etc/hosts
+          params:
+            $puppet_server_ip: { get_attr: [puppet_server, first_address] }
+
+  hosts_deploy:
+    type: OS::Heat::SoftwareDeployment
+    properties:
+      config: { get_resource: hosts_cfg }
+      server: { get_resource: puppet_server }
+      signal_transport: HEAT_SIGNAL
+
+
+  # Puppet agent installation on server (confgi and deploy)
   puppet_agent_cfg:
     type: OS::Heat::SoftwareConfig
     properties:
@@ -44,10 +70,12 @@ resources:
 
   puppet_agent_deploy:
     type: OS::Heat::SoftwareDeployment
+    depends_on: hosts_deploy
     properties:
       config: { get_resource: puppet_agent_cfg }
       server: { get_resource: puppet_server }
       signal_transport: HEAT_SIGNAL
+
 
 # The parameters section gathers configuration from the user.
 parameters:
