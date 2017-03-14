@@ -1,0 +1,69 @@
+# This describes what is deployed by this template.
+description: Bootstrap Puppet server with Heat on Chameleon
+
+# This defines the minimum Heat version required by this template.
+heat_template_version: 2015-10-15
+
+# The resources section defines what OpenStack resources are to be deployed and
+# how they should be configured.
+resources:
+  puppet_server_floating_ip:
+    type: OS::Nova::FloatingIP
+    properties:
+      pool: ext-net
+
+  puppet_server:
+    type: OS::Nova::Server
+    properties:
+      flavor: baremetal
+      image: Ubuntu_heat
+      key_name: { get_param: key_name }
+      networks:
+         - network: sharednet1
+      scheduler_hints: { reservation: { get_param: reservation_id } }
+      user_data_format: SOFTWARE_CONFIG
+      software_config_transport: POLL_SERVER_HEAT
+
+  puppet_server_ip_association:
+    type: OS::Nova::FloatingIPAssociation
+    properties:
+      floating_ip: { get_resource: puppet_server_floating_ip }
+      server_id: { get_resource: puppet_server }
+
+  puppet_agent_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: |
+        #!/bin/sh
+        apt-get update && apt-get install git
+        cd /tmp
+        wget -q http://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb && dpkg -i puppetlabs-release-pc1-trusty.deb
+        wget https://apt.puppetlabs.com/pubkey.gpg && apt-key add pubkey.gpg
+        apt-get update && apt-get install -y eatmydata lsb-release puppet-agent=1.5.2-1trusty
+
+  puppet_agent_deploy:
+    type: OS::Heat::SoftwareDeployment
+    properties:
+      config: { get_resource: puppet_agent_cfg }
+      server: { get_resource: puppet_server }
+      signal_transport: HEAT_SIGNAL
+
+# The parameters section gathers configuration from the user.
+parameters:
+  key_name:
+    type: string
+    description: Name of a KeyPair to enable SSH access to the instance
+    default: default
+    constraints:
+    - custom_constraint: nova.keypair
+  reservation_id:
+    type: string
+    description: ID of the Blazar reservation to use for launching instances.
+    constraints:
+    - custom_constraint: blazar.reservation
+
+outputs:
+  server_ip:
+    description: Public IP address of the Puppet server
+    value: { get_attr: [puppet_server_floating_ip, ip] }
