@@ -42,8 +42,8 @@ resources:
             #!/bin/bash
             hostname puppet-server
             echo "#Puppet needs to resolv server and client IP" >> /etc/hosts
-            echo "127.0.0.1 puppet-server" >> /etc/hosts
-            echo "$puppet_server_ip puppet-server" >> /etc/hosts
+            echo "127.0.0.1 puppet-server puppet-server.openstacklocal" >> /etc/hosts
+            echo "$puppet_server_ip puppet-server.openstacklocal" >> /etc/hosts
           params:
             $puppet_server_ip: { get_attr: [puppet_server, first_address] }
 
@@ -55,7 +55,7 @@ resources:
       signal_transport: HEAT_SIGNAL
 
 
-  # Puppet agent installation on server (confgi and deploy)
+  # Puppet agent installation on server (config and deploy)
   puppet_agent_cfg:
     type: OS::Heat::SoftwareConfig
     properties:
@@ -75,6 +75,38 @@ resources:
       config: { get_resource: puppet_agent_cfg }
       server: { get_resource: puppet_server }
       signal_transport: HEAT_SIGNAL
+
+  # Bootstrap Puppet Sever (config and deploy)
+  puppet_bootstrap_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: |
+        #!/bin/sh
+        cd /tmp
+        #Clone g5k repo and copy hiera and modules
+        git clone https://github.com/pmorillon/xp5k-openstack.git
+        export MODULE_DIR=xp5k-openstack/provision/puppet/modules
+        export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_starter_kit/hiera/templates
+        export PUPPET_DIR=/etc/puppetlabs/code/environments
+        mkdir $PUPPET_DIR/bootstrap
+        cp -r $MODULE_DIR $PUPPET_DIR/bootstrap/
+        cp -r $HIERA_TEMPLATES_DIR $PUPPET_DIR/bootstrap/hieradata
+        #Generate Hiera data
+        mv $PUPPET_DIR/bootstrap/hieradata/nodes/puppetserver.yaml $PUPPET_DIR/bootstrap/hieradata/nodes/puppet-server.openstacklocal.yaml
+        sed -i 's/host1/puppet-server.openstacklocal/g' $PUPPET_DIR/bootstrap/hieradata/nodes/puppet-server.openstacklocal.yaml
+        #Bootstrap Puppet Server
+        eatmydata /opt/puppetlabs/bin/puppet apply --environment bootstrap -e 'include xp,xp::locales,xp::puppet::server'
+        sync
+
+  puppet_bootstrap_deploy:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: puppet_agent_deploy
+    properties:
+      config: { get_resource: puppet_bootstrap_cfg }
+      server: { get_resource: puppet_server }
+      signal_transport: HEAT_SIGNAL
+
 
 
 # The parameters section gathers configuration from the user.
