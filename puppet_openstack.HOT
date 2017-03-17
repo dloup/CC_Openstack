@@ -116,7 +116,8 @@ resources:
         #!/bin/sh
         cd /tmp
         #Clone g5k repo then copy hiera and modules
-        git clone https://github.com/pmorillon/xp5k-openstack.git
+        #git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
+        git clone https://github.com/grid5000/xp5k-openstack.git
         export MODULE_DIR=xp5k-openstack/provision/puppet/modules
         export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_starter_kit/hiera/templates
         export PUPPET_DIR=/etc/puppetlabs/code/environments
@@ -152,18 +153,22 @@ resources:
         export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_starter_kit/hiera/templates
         export PUPPET_DIR=/etc/puppetlabs/code/environments
         #Get module
-        SCENARIO_STARTER=xp5k-openstack/scenarios/liberty_start_kit
-        PUPPETFILE=$SCENARIO_STARTER/Puppetfile
-        PUPPETFILE_DIR=$SCENARIO_STARTER/puppet/modules-openstack
+        SCENARIO_STARTER=xp5k-openstack/scenarios/liberty_starter_kit
+        export PUPPETFILE=$SCENARIO_STARTER/Puppetfile
+        export PUPPETFILE_DIR=$SCENARIO_STARTER/puppet/modules-openstack
         #apt-get install ruby ruby-dev
         gem install r10k --no-ri --no-rdoc
         r10k puppetfile install -v
         #Copy modules to prod env
+        cp -r $MODULE_DIR $PUPPET_DIR/production/
         cp -r $SCENARIO_STARTER/puppet/modules-openstack $PUPPET_DIR/production/
-        cp -r $SCENARIO_STARTER/puppet/modules $PUPPET_DIR/production/modules-scenario
+        cp -r $SCENARIO_STARTER/puppet/modules/* $PUPPET_DIR/production/modules-scenario
         #Copy and update hiera data
         cp -r $PUPPET_DIR/bootstrap/hieradata/* $PUPPET_DIR/production/hieradata
-        echo "scenario::openstack::admin_password: demo" >> $PUPPET_DIR/hieradata/nodes/controller.openstacklocal.yaml 
+        echo "scenario::openstack::admin_password: demo" >> $PUPPET_DIR/production/hieradata/nodes/controller.openstacklocal.yaml
+        #Patch OS
+        sed -i '24s/apache2/httpd/' $PUPPET_DIR/production/modules-openstack/horizon/manifests/params.pp
+        sed -i 's/F78372A06FF50C80464FC1B4F7B8CEA6056E8E56/0A9AF2115F4687BD29803A206B73A36E6026DFCA/' $PUPPET_DIR/production/modules-openstack/rabbitmq/manifests/repo/apt.pp
 
   os_modules_deploy:
     type: OS::Heat::SoftwareDeployment
@@ -181,7 +186,9 @@ resources:
       group: script
       config: |
         #!/bin/sh
-        /opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal || true 
+        # Rm python modules causing issues
+        pip uninstall oslo.config oslo.context oslo.i18n oslo.log oslo.serialization oslo.utils -y
+        #/opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal || true 
 
   puppet_run_deploy:
     type: OS::Heat::SoftwareDeployment
