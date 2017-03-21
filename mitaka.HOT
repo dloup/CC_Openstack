@@ -116,8 +116,8 @@ resources:
         #!/bin/sh
         cd /tmp
         #Clone g5k repo then copy hiera and modules
-        #git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
-        git clone https://github.com/grid5000/xp5k-openstack.git
+        git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
+        #git clone https://github.com/grid5000/xp5k-openstack.git
         export MODULE_DIR=xp5k-openstack/provision/puppet/modules
         export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_starter_kit/hiera/templates
         export PUPPET_DIR=/etc/puppetlabs/code/environments
@@ -187,22 +187,9 @@ resources:
       config: |
         #!/bin/sh
         # Rm python modules causing issues
-        pip uninstall oslo.config oslo.context oslo.i18n oslo.log oslo.serialization oslo.utils pbr urllib3 -y
-        apt-get remove keystone* --purge
-        pip install scgi
-        #setup env
-        export OS_NO_CACHE='true'
-        export OS_TENANT_NAME='openstack'
-        export OS_USERNAME='admin'
-        export OS_PASSWORD='demo'
-        export OS_AUTH_URL='http://127.0.0.1:5000/v2.0/'
-        export OS_AUTH_STRATEGY='keystone'
-        export OS_REGION_NAME='RegionOne'
-        export CINDER_ENDPOINT_TYPE='publicURL'
-        export GLANCE_ENDPOINT_TYPE='publicURL'
-        export KEYSTONE_ENDPOINT_TYPE='publicURL'
-        export NOVA_ENDPOINT_TYPE='publicURL'
-        export NEUTRON_ENDPOINT_TYPE='publicURL'
+        #pip uninstall oslo.config oslo.context oslo.i18n oslo.log oslo.serialization oslo.utils pbr urllib3 -y
+        #apt-get remove keystone* --purge
+        #pip install scgi
         #/opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal || true 
 
   puppet_run_deploy:
