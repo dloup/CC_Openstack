@@ -1,0 +1,145 @@
+# This describes what is deployed by this template.
+description: Bootstrap Puppet server with Heat on Chameleon
+
+# This defines the minimum Heat version required by this template.
+heat_template_version: 2015-10-15
+
+# The resources section defines what OpenStack resources are to be deployed and
+# how they should be configured.
+resources:
+  # Setting up resources (Instance and IP)
+  controller_floating_ip:
+    type: OS::Nova::FloatingIP
+    properties:
+      pool: ext-net
+
+  puppet_server_floating_ip:
+    type: OS::Nova::FloatingIP
+    properties:
+      pool: ext-net
+
+  controller:
+    type: OS::Nova::Server
+    properties:
+      name: controller
+      flavor: baremetal
+      image: CC-Ubuntu14.04
+      key_name: { get_param: key_name }
+      networks:
+         - network: sharednet1
+      scheduler_hints: { reservation: { get_param: reservation_id } }
+      user_data: |
+        #!/bin/bash
+        # Insecure key, will be removed by frontend
+        echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNjtV7RI8vs/IOqwyFRbtb4PNibk6Ju8Hyv2CZk799/66rPW7Q4us6kMUuIUQK8vM6UuByGzsD8eeyGwDjwOmc12mYM0du2s05ABSL8L5L1ddDiRRUbxBEosLb9opZ64/TmjniOcfXdR1qqgm2dVf+MfS977h9c5VH4Kzvc9PiQf50I8IWoNtN0+zxiIJiAkssEXi/emjKTSMYrpwn9DYou559KC24CdgCr2WkTBDDjPzRVgu9OlGEIoPDfHyRUT99b8lkBrtLvlo5dTACdXRXmhW18TRst4TJDI7x8A4+n6SzAC9MYTDWzwcEEEwrzai+CUI86lNBLxLItch+/HuN root@INSECURE" > /root/.ssh/authorized_keys
+
+  puppet_server:
+    type: OS::Nova::Server
+    properties:
+      name: puppet_server
+      flavor: baremetal
+      image: CC-Ubuntu14.04
+      key_name: { get_param: key_name }
+      networks:
+         - network: sharednet1
+      scheduler_hints: { reservation: { get_param: reservation_id } }
+      user_data:
+        str_replace:
+          template: |
+            #!/bin/bash
+            # Insecure key, will be removed by frontend
+            echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNjtV7RI8vs/IOqwyFRbtb4PNibk6Ju8Hyv2CZk799/66rPW7Q4us6kMUuIUQK8vM6UuByGzsD8eeyGwDjwOmc12mYM0du2s05ABSL8L5L1ddDiRRUbxBEosLb9opZ64/TmjniOcfXdR1qqgm2dVf+MfS977h9c5VH4Kzvc9PiQf50I8IWoNtN0+zxiIJiAkssEXi/emjKTSMYrpwn9DYou559KC24CdgCr2WkTBDDjPzRVgu9OlGEIoPDfHyRUT99b8lkBrtLvlo5dTACdXRXmhW18TRst4TJDI7x8A4+n6SzAC9MYTDWzwcEEEwrzai+CUI86lNBLxLItch+/HuN root@INSECURE" > /root/.ssh/authorized_keys
+            echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNjtV7RI8vs/IOqwyFRbtb4PNibk6Ju8Hyv2CZk799/66rPW7Q4us6kMUuIUQK8vM6UuByGzsD8eeyGwDjwOmc12mYM0du2s05ABSL8L5L1ddDiRRUbxBEosLb9opZ64/TmjniOcfXdR1qqgm2dVf+MfS977h9c5VH4Kzvc9PiQf50I8IWoNtN0+zxiIJiAkssEXi/emjKTSMYrpwn9DYou559KC24CdgCr2WkTBDDjPzRVgu9OlGEIoPDfHyRUT99b8lkBrtLvlo5dTACdXRXmhW18TRst4TJDI7x8A4+n6SzAC9MYTDWzwcEEEwrzai+CUI86lNBLxLItch+/HuN root@INSECURE" > /root/.ssh/id_rsa.pub
+            echo "-----BEGIN RSA PRIVATE KEY-----
+            MIIEowIBAAKCAQEAzY7Ve0SPL7PyDqsMhUW7W+DzYm5OibvB8r9gmZO/ff+uqz1u
+            0OLrOpDFLiFECvLzOlLgchs7A/HnshsA48DpnNdpmDNHbtrNOQAUi/C+S9XXQ4kU
+            VG8QRKLC2/aKWeuP05o54jnH13UdaqoJtnVX/jH0ve+4fXOVR+Cs73PT4kH+dCPC
+            FqDbTdPs8YiCYgJLLBF4v3poyk0jGK6cJ/Q2KLuefSgtuAnYAq9lpEwQw4z80VYL
+            vTpRhCKDw3x8kVE/fW/JZAa7S75aOXUwAnV0V5oVtfE0bLeEyQyO8fAOPp+kswAv
+            TGEw1s8HBBBMK82ovglCPOpTQS8SyLXIfvx7jQIDAQABAoIBAC7PM/YaKrEmPRzx
+            /qvqsTu/Ai2MCP58bzIkOo8+ggDjVJdSKgYPZpmzlfNnR+NmZ9UEQnA5mzrOv4Bj
+            fdRffdNlinpKUx3/XXR5fDRR4kPKsnaCpMqFcCLxHYaRoffQGLSLDlth5Qw/cy9z
+            ATs3hY4xOhZ2nICU7Y2ssDTnH30KObXKgViGym9k0RmhLxLp242WcpvZWgKUDnah
+            R49Kl7UEtbjPweL1RuhtOuUuqNRlE4D0W5HgwzpsscKyoBAG4ytGapYhfB8BMTdS
+            mnWMiMu1xvDRPiydq4p+rM+H6+sm/j03nOmvG7a4Y682NdjuJMZ54sqTOJCa2Coa
+            rfu5l4ECgYEA6TOUxPQh4HtwJ7IZtie3fJ517V9QH9zYLTms7/XoAoGWqpQvG0dU
+            4j1q/z726IeZmUE90zr89hjKnJwD4m+MJsAosVnZt8FOFGemYuCFlqOFVrZcA44M
+            4dmjVVzOnQdKPXoIfq0NiU6TqjXOwJNJnpOfMxPpqMXsVmV6qDlFcMUCgYEA4ado
+            X653hMSK30d9eBrZ00wL7mpSHi6a4uMySFoU3UYvZ1yhnHIX8ECQktEHy1i8bjtb
+            um0IOwwbqAoY+Zj4kjfdQjppFNK8SymjIczNywlBgXm2jgQh9D2GVE3le5fBYNZ5
+            Zy7Mh2Oon7Yj0S93qO22rf6Qfw02pYXVGFcmfCkCgYEAlFQXu1KhPZymEMmqqv8G
+            KYDM94fZefrJkbKOui6KPRXaFHOeptYvOpvgM6wD9pFRdHZX8cQiZBIOxaBCpENZ
+            PMia2XuSDNwqYrYu0dOHhPJLfIUPb79pmDoLNt+KF70sToARaSl/Y6eUKv6AnGLS
+            v8ebyixPQedqVOXFJ70N2xUCgYAeuuqm5R6XsSBsadL3cUiq0tdpH4eRXq1vKpul
+            aMcgnzdDb0T/BjamXFST+e2CztHSfTjvuXt+dxapGr7t9twbJYp3Q3ceA9jqr3/s
+            0XRRKzCFjmrDCmMJXPuXLYiL/U2zf2HHIINwCK1lGqvkB//WvJC9P0a0VrtTbVdo
+            2i1+iQKBgFy3nj7pQKGvM3M2lEyTHjlvXDCZSjDX1MJrSP4rejBlGI1snddIBx5U
+            a44V2vG4V7YXQ9W3BgEC3DBs6SI0cYRuq52H1oQAJKshckyv+rXblIsxP/9/gUkw
+            jR/Dq7aOnsLMvv6d8KjqCcHCP5il0eZdSJP2B2yRx7pSNLR0nMCN
+            -----END RSA PRIVATE KEY-----
+            " > /root/.ssh/id_rsa
+            chmod 600 /root/.ssh/id_rsa
+            echo "
+            Host *
+              StrictHostKeyChecking no
+              HashKnownHosts no" >> /root/.ssh/config
+            # Configure /etc/hosts
+            puppet_server_ip="$(/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}')"
+            echo "
+             #Puppet needs to resolv server and client IP
+            $puppet_server_ip puppet-server puppet-server.openstacklocal
+            $controller_ip controller controller.openstacklocal" >> /etc/hosts
+            scp /etc/hosts controller:/etc/hosts
+            # Run in screen to follow the steps
+            echo 'startup_message off' >> /root/.screenrc
+            echo '
+            #!/bin/bash
+            cd /root/
+            git clone https://github.com/dloup/xp5k-openstack -b CC_test
+            cd xp5k-openstack
+            # Setup Ruby env
+            curl -sSL https://get.rvm.io | bash -s stable --ruby
+            source /usr/local/rvm/scripts/rvm
+            rvm install ruby-2.1.2
+            # Run rake
+            source setup_env.sh
+            gem install bundler
+            bundle install
+            rake run' >> /root/screen_exe.sh
+            chmod u+x /root/screen_exe.sh
+            screen -S rake_run -d -m sh -c '/root/screen_exe.sh; exec bash'
+
+          
+          params:
+            $controller_ip: { get_attr: [controller, first_address] }
+
+  controller_ip_association:
+    type: OS::Nova::FloatingIPAssociation
+    properties:
+      floating_ip: { get_resource: controller_floating_ip }
+      server_id: { get_resource: controller }
+
+  puppet_server_ip_association:
+    type: OS::Nova::FloatingIPAssociation
+    properties:
+      floating_ip: { get_resource: puppet_server_floating_ip }
+      server_id: { get_resource: puppet_server }
+
+# The parameters section gathers configuration from the user.
+parameters:
+  key_name:
+    type: string
+    description: Name of a KeyPair to enable SSH access to the instance
+    default: default
+    constraints:
+    - custom_constraint: nova.keypair
+  reservation_id:
+    type: string
+    description: ID of the Blazar reservation to use for launching instances.
+    constraints:
+    - custom_constraint: blazar.reservation
+
+outputs:
+  controller_ip:
+    description: Public IP address of the controller (port 8080 for dashboard)
+    value: { get_attr: [controller_floating_ip, ip] }
