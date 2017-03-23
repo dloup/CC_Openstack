@@ -91,25 +91,22 @@ resources:
             $controller_ip controller controller.openstacklocal" >> /etc/hosts
             scp /etc/hosts controller:/etc/hosts
             # Run in screen to follow the steps
-            echo 'startup_message off' >> /root/.screenrc
-            echo '
-            #!/bin/bash
+            echo '#!/bin/bash
+            HOME=/root
             cd /root/
             git clone https://github.com/dloup/xp5k-openstack -b CC_test
-            cd xp5k-openstack
             # Setup Ruby env
-            curl -sSL https://get.rvm.io | bash -s stable --ruby
+            curl -sSL https://get.rvm.io | bash -s stable
             source /usr/local/rvm/scripts/rvm
             rvm install ruby-2.1.2
             # Run rake
+            cd xp5k-openstack
             source setup_env.sh
             gem install bundler
             bundle install
-            rake run' >> /root/screen_exe.sh
-            chmod u+x /root/screen_exe.sh
-            screen -S rake_run -d -m sh -c '/root/screen_exe.sh; exec bash'
-
-          
+            rake run' >> /root/run.sh
+            chmod u+x /root/run.sh
+            screen -d -m -L -S rake_run /root/run.sh
           params:
             $controller_ip: { get_attr: [controller, first_address] }
 
