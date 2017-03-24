@@ -92,21 +92,22 @@ resources:
             scp /etc/hosts controller:/etc/hosts
             # Run in screen to follow the steps
             echo '#!/bin/bash
-            HOME=/root
             cd /root/
             git clone https://github.com/dloup/xp5k-openstack -b CC_test
             # Setup Ruby env
-            curl -sSL https://get.rvm.io | bash -s stable
-            source /usr/local/rvm/scripts/rvm
-            rvm install ruby-2.1.2
+            apt-add-repository -y ppa:brightbox/ruby-ng
+            apt-get update
+            apt-get install -y ruby2.1 ruby2.1-dev
             # Run rake
             cd xp5k-openstack
             source setup_env.sh
             gem install bundler
             bundle install
-            rake run' >> /root/run.sh
+            export HOME=/root
+            rake run
+            ' >> /root/run.sh
             chmod u+x /root/run.sh
-            screen -d -m -L -S rake_run /root/run.sh
+            /root/run.sh > /root/rake_out.log 2>&1
           params:
             $controller_ip: { get_attr: [controller, first_address] }
 
