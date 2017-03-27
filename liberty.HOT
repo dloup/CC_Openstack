@@ -23,7 +23,7 @@ resources:
     properties:
       name: puppet-server
       flavor: baremetal
-      image: Ubuntu_heat
+      image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -36,7 +36,7 @@ resources:
     properties:
       name: controller
       flavor: baremetal
-      image: Ubuntu_heat
+      image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -186,11 +186,7 @@ resources:
       group: script
       config: |
         #!/bin/sh
-        # Rm python modules causing issues
-        #pip uninstall oslo.config oslo.context oslo.i18n oslo.log oslo.serialization oslo.utils -y
-        #apt-get remove keystone* --purge
-        #pip install scgi
-        #/opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal || true 
+        /opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal > /root/puppet.log 2>&1 || true
 
   puppet_run_deploy:
     type: OS::Heat::SoftwareDeployment
