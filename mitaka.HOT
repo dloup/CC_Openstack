@@ -23,7 +23,7 @@ resources:
     properties:
       name: puppet-server
       flavor: baremetal
-      image: Ubuntu_heat
+      image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -36,7 +36,7 @@ resources:
     properties:
       name: controller
       flavor: baremetal
-      image: Ubuntu_heat
+      image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -116,8 +116,7 @@ resources:
         #!/bin/sh
         cd /tmp
         #Clone g5k repo then copy hiera and modules
-        git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
-        #git clone https://github.com/grid5000/xp5k-openstack.git
+        git clone -b CC_mitaka https://github.com/dloup/xp5k-openstack.git
         export MODULE_DIR=xp5k-openstack/provision/puppet/modules
         export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_starter_kit/hiera/templates
         export PUPPET_DIR=/etc/puppetlabs/code/environments
@@ -186,11 +185,7 @@ resources:
       group: script
       config: |
         #!/bin/sh
-        # Rm python modules causing issues
-        #pip uninstall oslo.config oslo.context oslo.i18n oslo.log oslo.serialization oslo.utils pbr urllib3 -y
-        #apt-get remove keystone* --purge
-        #pip install scgi
-        #/opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal || true 
+        /opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal > /root/puppet.log 2>&1 || true
 
   puppet_run_deploy:
     type: OS::Heat::SoftwareDeployment
