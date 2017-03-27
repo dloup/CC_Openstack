@@ -185,8 +185,30 @@ resources:
     properties:
       group: script
       config: |
-        #!/bin/sh
+        #!/bin/bash
         /opt/puppetlabs/bin/puppet agent -t --server puppet-server.openstacklocal > /root/puppet.log 2>&1 || true
+        # Configure scenario TODO : Add parameters to let user choose to exec or not this part
+        source /root/openstack-openrc.sh
+        ## Rules (allow SSH and ICMP)
+        nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
+        nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+        ## Public Bridge
+        ovs-vsctl add-port br-ex eth0 && ip addr flush eth0 && dhclient -nw br-ex
+        ## Create xs flavor
+        nova flavor-create m1.xs auto 2048 4 2 --is-public True
+        ## Images (Cirros and Debian)
+        /usr/bin/wget -q -O /tmp/cirros.img http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
+        /usr/bin/wget -q -O /tmp/debian.img http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2
+        glance image-create --name="Cirros" --disk-format=qcow2 --container-format=bare --property architecture=x86_64 --progress --file /tmp/cirros.img
+        glance image-create --name="Debian Jessie 64-bit" --disk-format=qcow2 --container-format=bare --property architecture=x86_64 --progress --file /tmp/debian.img
+        ## Network TODO : Do not use Chameleon Shared network
+        neutron net-create public --shared --provider:physical_network external --provider:network_type flat --router:external True
+        neutron net-create private
+        neutron subnet-create public 10.140.80.0/22 --name public-subnet --allocation-pool start=10.140.80.60,end=10.140.80.65 --gateway 10.140.83.254  --disable-dhcp
+        neutron subnet-create private 192.168.0.0/24 --name private-subnet --dns-nameserver 8.8.8.8 --allocation-pool start=192.168.0.100,end=192.168.0.200
+        neutron router-create main_router
+        neutron router-gateway-set main_router public
+        neutron router-interface-add main_router private-subnet
 
   puppet_run_deploy:
     type: OS::Heat::SoftwareDeployment
