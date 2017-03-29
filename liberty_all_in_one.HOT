@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: Bootstrap Puppet server with Heat on Chameleon
+description: Deploys a simple Openstack Liberty (one node is the controller + the compute node) using a separate Puppet server
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15

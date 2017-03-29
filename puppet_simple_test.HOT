@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: Bootstrap Puppet server with Heat on Chameleon
+description: Bootstrap Puppet server with Heat on Chameleon and run agent on a Client
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15
