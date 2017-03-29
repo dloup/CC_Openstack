@@ -109,15 +109,18 @@ resources:
             $frontend_ip frontend frontend.openstacklocal" >> /etc/hosts
             scp /etc/hosts puppet-server:/etc/hosts
             scp /etc/hosts controller:/etc/hosts
-            # Setup xp5k ( clone branche, xp.conf, souce bundle install )
+            # Setup script to run
             cd /root/
             git clone https://github.com/dloup/xp5k-openstack -b CC_test
+            apt-add-repository -y ppa:brightbox/ruby-ng
+            apt-get update
+            apt-get install -y ruby2.1 ruby2.1-dev
             cd xp5k-openstack
             source setup_env.sh
             gem install bundler
             bundle install
-            # Now, just run : rake run
-          
+            export HOME=/root
+            rake run > /root/rake_out.log 2>&1
           params:
             $puppet_server_ip: { get_attr: [puppet_server, first_address] }
             $controller_ip: { get_attr: [controller, first_address] }
