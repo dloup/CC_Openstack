@@ -259,20 +259,29 @@ resources:
             /opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true
             #Basic OS configuration
             source /root/adminrc
-            ## Rules (allow SSH and ICMP)
+              ## Rules (allow SSH and ICMP)
             nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
             nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
-            ## Public Bridge
+              ## Public Bridge
             ovs-vsctl add-port br-ex eth0 && ip addr flush eth0 && dhclient -nw br-ex
-            ## Create xs flavor
+              ## Create xs flavor
             nova flavor-create m1.xs auto 2048 4 2 --is-public True
-            ## Images (Cirros and Debian)
+              ## Images (Cirros and Debian)
             /usr/bin/wget -q -O /tmp/cirros.img http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
-            glance image-create --name="Cirros" --disk-format=qcow2 --container-format=bare --property architecture=x86_64 --progress --file /tmp/cirros.img
-            ## Network TODO : Do not use Chameleon Shared network
-            neutron net-create public --shared --provider:physical_network external --provider:network_type flat --router:external True
+            glance image-create --name="Cirros" --visibility public --disk-format=qcow2 --container-format=bare --property architecture=x86_64 --progress --file /tmp/cirros.img
+              ## Network
+            neutron net-create public --provider:physical_network external --provider:network_type flat --router:external True
             neutron net-create private
-            neutron subnet-create public $net_cidr --name public-subnet --allocation-pool start=$net_pool_start,end=$net_pool_end --gateway $net_gateway  --disable-dhcp
+            export host_ip=`/opt/puppetlabs/bin/facter ipaddress`
+              ## If on TACC, no allocation pool
+            if [[ $host_ip =~ 10\.40\.[0-1]\.[0-254] ]]; then
+              neutron subnet-create public 10.40.0.0/23 --name public-subnet --gateway 10.40.1.254 --disable-dhcp --allocation-pool start=10.40.0.1,end=10.40.0.1
+              ## If on UC and not on isolated network, no allocation pool
+            elif [[ $host_ip =~ 10\.140\.8[0-3]\.[0-254] ]]; then
+              neutron subnet-create public 10.140.80.0/22 --name public-subnet --gateway 10.140.83.254 --disable-dhcp --allocation-pool start=10.140.80.1,end=10.140.80.1
+            else
+              neutron subnet-create public $net_cidr --name public-subnet --allocation-pool start=$net_pool_start,end=$net_pool_end --gateway $net_gateway --disable-dhcp
+            fi
             neutron subnet-create private 192.168.0.0/24 --name private-subnet --dns-nameserver 8.8.8.8 --allocation-pool start=192.168.0.10,end=192.168.0.200
             neutron router-create main_router
             neutron router-gateway-set main_router public
@@ -318,26 +327,30 @@ resources:
 parameters:
   network:
     type: string
-    description: Network that will be used as public network (Cannot be shared network)
-    default: none
+    description: "Network that will be used as public network. If you use sharednet, you won t be able to use floating IP."
+    default: None
     constraints:
     - custom_constraint: neutron.network
   net_cidr:
+    label: Network CIDR (if not sharednet)
     type: string
-    description: 'CIDR of the network defined in the previous parameter : Exemple : 192.168.0.0/24'
     default: none
+    description: 'CIDR of the network defined in the previous parameter : Exemple : 192.168.0.0/24. Leave blank if using sharednet'
   net_gateway:
+    label: Network Gateway (if not sharednet)
     type: string
-    description: 'IP adresse of the gateway of the network defined in the previous parameter'
     default: none
+    description: 'IP adresse of the gateway of the network. Leave blank if using sharednet'
   net_pool_start:
+    label: Network Pool Start (if not sharednet)
     type: string
-    description: 'In the network, start of allocation pool for floating IP. Ex : 192.168.0.100 for a subnet 192.168.0.0/24.'
     default: none
+    description: 'Start of allocation pool for floating IP. Ex : 192.168.0.100 for a subnet 192.168.0.0/24.'
   net_pool_end:
+    label: Network Pool End (if not sharednet)
     type: string
-    description: 'In the network, end of allocation pool for floating IP. Ex : 192.168.0.200 for a subnet 192.168.0.0/24'
     default: none
+    description: 'End of allocation pool for floating IP. Ex : 192.168.0.200 for a subnet 192.168.0.0/24'
   key_name:
     type: string
     description: 'Name of a KeyPair to enable SSH access to the instance'
@@ -361,6 +374,25 @@ parameters:
     constraints:
       - range: { min: 1 }
         description: There must be at least one compute node.
+
+#Organize Paramters
+parameter_groups:
+  - label: Common parameters
+    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
+    parameters:
+    - key_name
+    - reservation_id
+    - OS_password
+    - compute_node_count
+
+  - label: Network parameters
+    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
+    parameters:
+    - network
+    - net_cidr
+    - net_gateway
+    - net_pool_start
+    - net_pool_end
 
 outputs:
   horizon_dashboard:
