@@ -25,7 +25,7 @@ resources:
           params:
             $stack_name: { get_param: "OS::stack_name" }
       flavor: baremetal
-      image: CC-Ubuntu-OS_puppet_agent
+      image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
          - network: { get_param: network }
@@ -46,7 +46,7 @@ resources:
               params:
                 $stack_name: { get_param: "OS::stack_name" }
           flavor: baremetal
-          image: CC-Ubuntu-OS_puppet_agent
+          image: CC-Ubuntu-OS
           key_name: { get_param: key_name }
           networks:
              - network: { get_param: network }
