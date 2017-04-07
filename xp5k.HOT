@@ -23,7 +23,7 @@ resources:
     properties:
       name: puppet-server
       flavor: baremetal
-      image: CC-Ubuntu14.04
+      image: g5k_ubuntu_min_fix
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -32,13 +32,14 @@ resources:
         #!/bin/bash
         # Insecure key, will be removed by frontend
         echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNjtV7RI8vs/IOqwyFRbtb4PNibk6Ju8Hyv2CZk799/66rPW7Q4us6kMUuIUQK8vM6UuByGzsD8eeyGwDjwOmc12mYM0du2s05ABSL8L5L1ddDiRRUbxBEosLb9opZ64/TmjniOcfXdR1qqgm2dVf+MfS977h9c5VH4Kzvc9PiQf50I8IWoNtN0+zxiIJiAkssEXi/emjKTSMYrpwn9DYou559KC24CdgCr2WkTBDDjPzRVgu9OlGEIoPDfHyRUT99b8lkBrtLvlo5dTACdXRXmhW18TRst4TJDI7x8A4+n6SzAC9MYTDWzwcEEEwrzai+CUI86lNBLxLItch+/HuN root@INSECURE" > /root/.ssh/authorized_keys
+        chown root:root /tmp && chmod 777 /tmp
 
   controller:
     type: OS::Nova::Server
     properties:
       name: controller
       flavor: baremetal
-      image: CC-Ubuntu14.04
+      image: g5k_ubuntu_min_fix
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -47,6 +48,7 @@ resources:
         #!/bin/bash
         # Insecure key, will be removed by frontend
         echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNjtV7RI8vs/IOqwyFRbtb4PNibk6Ju8Hyv2CZk799/66rPW7Q4us6kMUuIUQK8vM6UuByGzsD8eeyGwDjwOmc12mYM0du2s05ABSL8L5L1ddDiRRUbxBEosLb9opZ64/TmjniOcfXdR1qqgm2dVf+MfS977h9c5VH4Kzvc9PiQf50I8IWoNtN0+zxiIJiAkssEXi/emjKTSMYrpwn9DYou559KC24CdgCr2WkTBDDjPzRVgu9OlGEIoPDfHyRUT99b8lkBrtLvlo5dTACdXRXmhW18TRst4TJDI7x8A4+n6SzAC9MYTDWzwcEEEwrzai+CUI86lNBLxLItch+/HuN root@INSECURE" > /root/.ssh/authorized_keys
+        chown root:root /tmp && chmod 777 /tmp
 
   frontend:
     type: OS::Nova::Server
@@ -110,6 +112,7 @@ resources:
             scp /etc/hosts puppet-server:/etc/hosts
             scp /etc/hosts controller:/etc/hosts
             # Setup script to run
+            chown root:root /tmp && chmod 777 /tmp
             cd /root/
             git clone https://github.com/dloup/xp5k-openstack -b CC_test
             apt-add-repository -y ppa:brightbox/ruby-ng
@@ -120,7 +123,7 @@ resources:
             gem install bundler
             bundle install
             export HOME=/root
-            rake run > /root/rake_out.log 2>&1
+            #rake run > /root/rake_out.log 2>&1
           params:
             $puppet_server_ip: { get_attr: [puppet_server, first_address] }
             $controller_ip: { get_attr: [controller, first_address] }
