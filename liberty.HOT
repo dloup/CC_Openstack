@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: Deploys Openstack Liberty using a Puppet Server. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes
+description: "Deploys Openstack Liberty without network isolation : The public network of the OS instance is the sharednet of Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15
@@ -16,6 +16,12 @@ resources:
     properties:
       pool: ext-net
 
+  router_port:
+    type: OS::Neutron::Port
+    properties:
+      name: router-port
+      network: sharednet1
+
   controller:
     type: OS::Nova::Server
     properties:
@@ -28,7 +34,7 @@ resources:
       image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
-         - network: { get_param: network }
+         - network: sharednet1
       scheduler_hints: { reservation: { get_param: reservation_id } }
       user_data_format: SOFTWARE_CONFIG
       software_config_transport: POLL_SERVER_HEAT
@@ -49,7 +55,7 @@ resources:
           image: CC-Ubuntu-OS
           key_name: { get_param: key_name }
           networks:
-             - network: { get_param: network }
+             - network: sharednet1
           scheduler_hints: { reservation: { get_param: reservation_id } }
           user_data_format: SOFTWARE_CONFIG
           software_config_transport: POLL_SERVER_HEAT
@@ -273,25 +279,23 @@ resources:
             neutron net-create public --provider:physical_network external --provider:network_type flat --router:external True
             neutron net-create private
             export host_ip=`/opt/puppetlabs/bin/facter ipaddress`
-              ## If on TACC, no allocation pool
+              ## TACC
             if [[ $host_ip =~ 10\.40\.[0-1]\.[0-254] ]]; then
-              neutron subnet-create public 10.40.0.0/23 --name public-subnet --gateway 10.40.1.254 --disable-dhcp --allocation-pool start=10.40.0.1,end=10.40.0.1
-              ## If on UC and not on isolated network, no allocation pool
+              neutron subnet-create public 10.40.0.0/23 --name public-subnet --gateway 10.40.1.254 --disable-dhcp --allocation-pool start=$router_ip,end=$router_ip
+              ## UC
             elif [[ $host_ip =~ 10\.140\.8[0-3]\.[0-254] ]]; then
-              neutron subnet-create public 10.140.80.0/22 --name public-subnet --gateway 10.140.83.254 --disable-dhcp --allocation-pool start=10.140.80.1,end=10.140.80.1
+              neutron subnet-create public 10.140.80.0/22 --name public-subnet --gateway 10.140.83.254 --disable-dhcp --allocation-pool start=$router_ip,end=$router_ip
             else
-              neutron subnet-create public $net_cidr --name public-subnet --allocation-pool start=$net_pool_start,end=$net_pool_end --gateway $net_gateway --disable-dhcp
+              echo "Can't create network configuration because the controller host is not on the TACC sharednet neither on the UC sharednet"
+              exit 1
             fi
             neutron subnet-create private 192.168.0.0/24 --name private-subnet --dns-nameserver 8.8.8.8 --allocation-pool start=192.168.0.10,end=192.168.0.200
             neutron router-create main_router
-            neutron router-gateway-set main_router public
+            neutron router-gateway-set main_router public --fixed-ip subnet_id=public-subnet,ip_address=$router_ip
             neutron router-interface-add main_router private-subnet
           params:
             $controller_heat_name: { get_attr: [controller, name] }
-            $net_cidr: { get_param: net_cidr }
-            $net_pool_start: { get_param: net_pool_start }
-            $net_pool_end: { get_param: net_pool_end }
-            $net_gateway: { get_param: net_gateway }
+            $router_ip: { get_attr: [router_port, fixed_ips, 0, ip_address] }
 
   puppet_compute_cfg:
     type: OS::Heat::SoftwareConfig
@@ -325,32 +329,6 @@ resources:
 
 # The parameters section gathers configuration from the user.
 parameters:
-  network:
-    type: string
-    description: "Network that will be used as public network. If you use sharednet, you won t be able to use floating IP."
-    default: None
-    constraints:
-    - custom_constraint: neutron.network
-  net_cidr:
-    label: Network CIDR (if not sharednet)
-    type: string
-    default: none
-    description: 'CIDR of the network defined in the previous parameter : Exemple : 192.168.0.0/24. Leave blank if using sharednet'
-  net_gateway:
-    label: Network Gateway (if not sharednet)
-    type: string
-    default: none
-    description: 'IP adresse of the gateway of the network. Leave blank if using sharednet'
-  net_pool_start:
-    label: Network Pool Start (if not sharednet)
-    type: string
-    default: none
-    description: 'Start of allocation pool for floating IP. Ex : 192.168.0.100 for a subnet 192.168.0.0/24.'
-  net_pool_end:
-    label: Network Pool End (if not sharednet)
-    type: string
-    default: none
-    description: 'End of allocation pool for floating IP. Ex : 192.168.0.200 for a subnet 192.168.0.0/24'
   key_name:
     type: string
     description: 'Name of a KeyPair to enable SSH access to the instance'
@@ -374,26 +352,6 @@ parameters:
     constraints:
       - range: { min: 1 }
         description: There must be at least one compute node.
-
-#Organize Paramters
-parameter_groups:
-  - label: Common parameters
-    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
-    parameters:
-    - key_name
-    - reservation_id
-    - OS_password
-    - compute_node_count
-
-  - label: Network parameters
-    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
-    parameters:
-    - network
-    - net_cidr
-    - net_gateway
-    - net_pool_start
-    - net_pool_end
-
 outputs:
   horizon_dashboard:
     description: Horizon Dashboard URL

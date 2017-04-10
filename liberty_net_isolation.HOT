@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: Deploys Openstack Liberty using a Puppet Server. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes
+description: "Deploys Openstack Liberty with network isolation (Only on UC) : The public network of the OS instance if an isolated network on Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15
@@ -7,7 +7,6 @@ heat_template_version: 2015-10-15
 # The resources section defines what OpenStack resources are to be deployed and
 # how they should be configured.
 resources:
-
   ##########
   # Setting up resources (Instance and IP)
   ##########
@@ -15,6 +14,28 @@ resources:
     type: OS::Nova::FloatingIP
     properties:
       pool: ext-net
+
+  isolated_net:
+    type: OS::Neutron::Net
+
+  isolated_subnet:
+    type: OS::Neutron::Subnet
+    properties:
+      network_id: { get_resource: isolated_net }
+      cidr: { get_param: net_cidr }
+      dns_nameservers: [ 8.8.8.8 ]
+      ip_version: 4
+
+  router:
+    type: OS::Neutron::Router
+    properties:
+      external_gateway_info: { network: ext-net }
+
+  router_int:
+    type: OS::Neutron::RouterInterface
+    properties:
+      router_id: { get_resource: router }
+      subnet: { get_resource: isolated_subnet }
 
   controller:
     type: OS::Nova::Server
@@ -25,10 +46,10 @@ resources:
           params:
             $stack_name: { get_param: "OS::stack_name" }
       flavor: baremetal
-      image: CC-Ubuntu-OS_puppet_agent
+      image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
-         - network: { get_param: network }
+         - network: { get_resource: isolated_net }
       scheduler_hints: { reservation: { get_param: reservation_id } }
       user_data_format: SOFTWARE_CONFIG
       software_config_transport: POLL_SERVER_HEAT
@@ -46,10 +67,10 @@ resources:
               params:
                 $stack_name: { get_param: "OS::stack_name" }
           flavor: baremetal
-          image: CC-Ubuntu-OS_puppet_agent
+          image: CC-Ubuntu-OS
           key_name: { get_param: key_name }
           networks:
-             - network: { get_param: network }
+             - network: { get_resource: isolated_net }
           scheduler_hints: { reservation: { get_param: reservation_id } }
           user_data_format: SOFTWARE_CONFIG
           software_config_transport: POLL_SERVER_HEAT
@@ -137,6 +158,7 @@ resources:
         hosts_srv: { get_attr: [ export_hosts_srv, hosts ] }
         hosts_compute: { get_attr: [ export_hosts_compute, hosts ] }
 
+
   ##########
   # Bootstrap Puppet Server
   ##########
@@ -156,7 +178,6 @@ resources:
             rm -f /etc/puppetlabs/puppet/ssl/private_keys/${controller_name}.openstacklocal.pem
             #Clone g5k repo then copy hiera and modules
             git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
-            #git clone https://github.com/grid5000/xp5k-openstack.git
             export MODULE_DIR=xp5k-openstack/provision/puppet/modules
             export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
             export PUPPET_DIR=/etc/puppetlabs/code/environments
@@ -215,17 +236,11 @@ resources:
             export MODULE_DIR=xp5k-openstack/provision/puppet/modules
             export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
             export PUPPET_DIR=/etc/puppetlabs/code/environments
-            #Get module
-            SCENARIO_STARTER=xp5k-openstack/scenarios/liberty_CC
-            export PUPPETFILE=$SCENARIO_STARTER/Puppetfile
-            export PUPPETFILE_DIR=$SCENARIO_STARTER/puppet/modules-openstack
-            #apt-get install ruby ruby-dev
-            gem install r10k -v 2.1 --no-ri --no-rdoc
-            r10k puppetfile install -v
+            export SCENARIO_CC=xp5k-openstack/scenarios/liberty_CC
             #Copy modules to prod env
             cp -r $MODULE_DIR $PUPPET_DIR/production/
-            cp -r $SCENARIO_STARTER/puppet/modules-openstack $PUPPET_DIR/production/
-            cp -r $SCENARIO_STARTER/puppet/modules/* $PUPPET_DIR/production/modules-scenario
+            tar xzf $SCENARIO_CC/puppet/modules-openstack.tar.gz -C $PUPPET_DIR/production/
+            cp -r $SCENARIO_CC/puppet/modules/scenario $PUPPET_DIR/production/modules-scenario
             #Copy and update hiera data
             cp -r $PUPPET_DIR/bootstrap/hieradata/* $PUPPET_DIR/production/hieradata
             sed -i "s/#Uncomment after OS modules copy//g" $PUPPET_DIR/production/hieradata/nodes/${controller_name}.openstacklocal.yaml
@@ -275,21 +290,23 @@ resources:
             nova flavor-create m1.xs auto 2048 4 2 --is-public True
             ## Images (Cirros and Debian)
             /usr/bin/wget -q -O /tmp/cirros.img http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
-            glance image-create --name="Cirros" --disk-format=qcow2 --container-format=bare --property architecture=x86_64 --progress --file /tmp/cirros.img
-            ## Network TODO : Do not use Chameleon Shared network
-            neutron net-create public --shared --provider:physical_network external --provider:network_type flat --router:external True
+            glance image-create --name="Cirros" --visibility public --disk-format=qcow2 --container-format=bare --property architecture=x86_64 --progress --file /tmp/cirros.img
+            ## Network
+            neutron net-create public --provider:physical_network external --provider:network_type flat --router:external True
             neutron net-create private
-            neutron subnet-create public $net_cidr --name public-subnet --allocation-pool start=$net_pool_start,end=$net_pool_end --gateway $net_gateway  --disable-dhcp
+            export host_ip=`/opt/puppetlabs/bin/facter ipaddress`
+            echo "$net_gw" > /tmp/net_gw
+            neutron subnet-create public $net_cidr --name public-subnet --allocation-pool start=$net_pool_start,end=$net_pool_end --gateway $net_gw --disable-dhcp
             neutron subnet-create private 192.168.0.0/24 --name private-subnet --dns-nameserver 8.8.8.8 --allocation-pool start=192.168.0.10,end=192.168.0.200
             neutron router-create main_router
-            neutron router-gateway-set main_router public
+            neutron router-gateway-set main_router public --fixed-ip 10.40.0.5
             neutron router-interface-add main_router private-subnet
           params:
             $controller_heat_name: { get_attr: [controller, name] }
             $net_cidr: { get_param: net_cidr }
-            $net_pool_start: { get_param: net_pool_start }
-            $net_pool_end: { get_param: net_pool_end }
-            $net_gateway: { get_param: net_gateway }
+            $net_pool_start: { get_param: net_cidr }
+            $net_pool_end: { get_param: net_cidr }
+            $net_gw: { get_attr: [isolated_subnet, gateway_ip] }
 
   puppet_compute_cfg:
     type: OS::Heat::SoftwareConfig
@@ -323,28 +340,21 @@ resources:
 
 # The parameters section gathers configuration from the user.
 parameters:
-  network:
-    type: string
-    description: Network that will be used as public network (Cannot be shared network)
-    default: none
-    constraints:
-    - custom_constraint: neutron.network
   net_cidr:
+    label: Network CIDR (if not sharednet)
     type: string
-    description: 'CIDR of the network defined in the previous parameter : Exemple : 192.168.0.0/24'
     default: none
-  net_gateway:
-    type: string
-    description: 'IP adresse of the gateway of the network defined in the previous parameter'
-    default: none
+    description: 'CIDR of the network defined in the previous parameter : Exemple : 192.168.0.0/24. Leave blank if using sharednet'
   net_pool_start:
+    label: Network Pool Start (if not sharednet)
     type: string
-    description: 'In the network, start of allocation pool for floating IP. Ex : 192.168.0.100 for a subnet 192.168.0.0/24.'
     default: none
+    description: 'Start of allocation pool for floating IP. Ex : 192.168.0.100 for a subnet 192.168.0.0/24.'
   net_pool_end:
+    label: Network Pool End (if not sharednet)
     type: string
-    description: 'In the network, end of allocation pool for floating IP. Ex : 192.168.0.200 for a subnet 192.168.0.0/24'
     default: none
+    description: 'End of allocation pool for floating IP. Ex : 192.168.0.200 for a subnet 192.168.0.0/24'
   key_name:
     type: string
     description: 'Name of a KeyPair to enable SSH access to the instance'
@@ -368,6 +378,23 @@ parameters:
     constraints:
       - range: { min: 1 }
         description: There must be at least one compute node.
+
+#Organize Paramters
+parameter_groups:
+  - label: Common parameters
+    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
+    parameters:
+    - key_name
+    - reservation_id
+    - OS_password
+    - compute_node_count
+
+  - label: Network parameters
+    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
+    parameters:
+    - net_cidr
+    - net_pool_start
+    - net_pool_end
 
 outputs:
   horizon_dashboard:
