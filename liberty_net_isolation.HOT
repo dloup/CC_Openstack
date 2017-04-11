@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: "Deploys Openstack Liberty with network isolation (Only on UC) : The public network of the OS instance if an isolated network on Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
+description: "Deploys Openstack Liberty with network isolation (Only on UC) : The public network of the OS instance is an isolated network on Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15
@@ -46,7 +46,7 @@ resources:
           params:
             $stack_name: { get_param: "OS::stack_name" }
       flavor: baremetal
-      image: CC-Ubuntu-OS
+      image: CC-Ubuntu-OS_controller
       key_name: { get_param: key_name }
       networks:
          - network: { get_resource: isolated_net }
