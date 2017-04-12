@@ -280,10 +280,10 @@ resources:
             neutron net-create private
             export host_ip=`/opt/puppetlabs/bin/facter ipaddress`
               ## TACC
-            if [[ $host_ip =~ 10\.40\.[0-1]\.[0-254] ]]; then
+            if [[ $host_ip =~ 10\.40\.[0-1]\.[0-9]{1,3} ]]; then
               neutron subnet-create public 10.40.0.0/23 --name public-subnet --gateway 10.40.1.254 --disable-dhcp --allocation-pool start=$router_ip,end=$router_ip
               ## UC
-            elif [[ $host_ip =~ 10\.140\.8[0-3]\.[0-254] ]]; then
+            elif [[ $host_ip =~ 10\.140\.8[0-3]\.[0-9]{1,3} ]]; then
               neutron subnet-create public 10.140.80.0/22 --name public-subnet --gateway 10.140.83.254 --disable-dhcp --allocation-pool start=$router_ip,end=$router_ip
             else
               echo "Can't create network configuration because the controller host is not on the TACC sharednet neither on the UC sharednet"
