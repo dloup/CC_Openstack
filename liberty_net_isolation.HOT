@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: "Deploys Openstack Liberty with network isolation (Only on UC) : The public network of the OS instance is an isolated network on Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
+description: "Deploys Openstack Liberty with network isolation (Only on UC) : The public network of the OS instance if an isolated network on Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15
@@ -15,28 +15,6 @@ resources:
     properties:
       pool: ext-net
 
-  isolated_net:
-    type: OS::Neutron::Net
-
-  isolated_subnet:
-    type: OS::Neutron::Subnet
-    properties:
-      network_id: { get_resource: isolated_net }
-      cidr: { get_param: net_cidr }
-      dns_nameservers: [ 8.8.8.8 ]
-      ip_version: 4
-
-  router:
-    type: OS::Neutron::Router
-    properties:
-      external_gateway_info: { network: ext-net }
-
-  router_int:
-    type: OS::Neutron::RouterInterface
-    properties:
-      router_id: { get_resource: router }
-      subnet: { get_resource: isolated_subnet }
-
   controller:
     type: OS::Nova::Server
     properties:
@@ -49,7 +27,7 @@ resources:
       image: CC-Ubuntu-OS_controller
       key_name: { get_param: key_name }
       networks:
-         - network: { get_resource: isolated_net }
+         - network: { get_param: network }
       scheduler_hints: { reservation: { get_param: reservation_id } }
       user_data_format: SOFTWARE_CONFIG
       software_config_transport: POLL_SERVER_HEAT
@@ -70,7 +48,7 @@ resources:
           image: CC-Ubuntu-OS
           key_name: { get_param: key_name }
           networks:
-             - network: { get_resource: isolated_net }
+             - network: { get_param: network }
           scheduler_hints: { reservation: { get_param: reservation_id } }
           user_data_format: SOFTWARE_CONFIG
           software_config_transport: POLL_SERVER_HEAT
@@ -299,14 +277,14 @@ resources:
             neutron subnet-create public $net_cidr --name public-subnet --allocation-pool start=$net_pool_start,end=$net_pool_end --gateway $net_gw --disable-dhcp
             neutron subnet-create private 192.168.0.0/24 --name private-subnet --dns-nameserver 8.8.8.8 --allocation-pool start=192.168.0.10,end=192.168.0.200
             neutron router-create main_router
-            neutron router-gateway-set main_router public --fixed-ip 10.40.0.5
+            neutron router-gateway-set main_router public
             neutron router-interface-add main_router private-subnet
           params:
             $controller_heat_name: { get_attr: [controller, name] }
             $net_cidr: { get_param: net_cidr }
-            $net_pool_start: { get_param: net_cidr }
-            $net_pool_end: { get_param: net_cidr }
-            $net_gw: { get_attr: [isolated_subnet, gateway_ip] }
+            $net_pool_start: { get_param: net_pool_start }
+            $net_pool_end: { get_param: net_pool_end }
+            $net_gw: { get_param: net_gw }
 
   puppet_compute_cfg:
     type: OS::Heat::SoftwareConfig
@@ -340,11 +318,23 @@ resources:
 
 # The parameters section gathers configuration from the user.
 parameters:
+  network:
+    label: Network
+    type: string
+    default: None
+    description: 'Network to use : either sharednet1 (no need for informations below in that case) or an isolated network'
+    constraints:
+      - custom_constraint: neutron.network
   net_cidr:
     label: Network CIDR (if not sharednet)
     type: string
     default: none
     description: 'CIDR of the network defined in the previous parameter : Exemple : 192.168.0.0/24. Leave blank if using sharednet'
+  net_gw:
+    label: Network Gateway (if not sharednet)
+    type: string
+    default: none
+    description: 'Gateway of the selected isolated network'
   net_pool_start:
     label: Network Pool Start (if not sharednet)
     type: string
@@ -392,7 +382,9 @@ parameter_groups:
   - label: Network parameters
     description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
     parameters:
+    - network
     - net_cidr
+    - net_gw
     - net_pool_start
     - net_pool_end
 
