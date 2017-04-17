@@ -1,0 +1,405 @@
+# This describes what is deployed by this template.
+description: "Deploys Openstack Liberty with network isolation (Only on UC) : The public network of the OS instance is an isolated network on Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
+
+# This defines the minimum Heat version required by this template.
+heat_template_version: 2015-10-15
+
+# The resources section defines what OpenStack resources are to be deployed and
+# how they should be configured.
+resources:
+  ##########
+  # Setting up resources (Instance and IP)
+  ##########
+  controller_floating_ip:
+    type: OS::Nova::FloatingIP
+    properties:
+      pool: ext-net
+
+  isolated_net:
+    type: OS::Neutron::Net
+
+  isolated_subnet:
+    type: OS::Neutron::Subnet
+    properties:
+      network_id: { get_resource: isolated_net }
+      cidr: { get_param: net_cidr }
+      dns_nameservers: [ 8.8.8.8 ]
+      ip_version: 4
+
+  router:
+    type: OS::Neutron::Router
+    properties:
+      external_gateway_info: { network: ext-net }
+
+  router_int:
+    type: OS::Neutron::RouterInterface
+    properties:
+      router_id: { get_resource: router }
+      subnet: { get_resource: isolated_subnet }
+
+  controller:
+    type: OS::Nova::Server
+    properties:
+      name:
+        str_replace:
+          template: $stack_name_controller
+          params:
+            $stack_name: { get_param: "OS::stack_name" }
+      flavor: baremetal
+      image: CC-Ubuntu-OS_controller
+      key_name: { get_param: key_name }
+      networks:
+         - network: { get_resource: isolated_net }
+      scheduler_hints: { reservation: { get_param: reservation_id } }
+      user_data_format: SOFTWARE_CONFIG
+      software_config_transport: POLL_SERVER_HEAT
+
+  compute_nodes:
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: { get_param: compute_node_count }
+      resource_def:
+        type: OS::Nova::Server
+        properties:
+          name:
+            str_replace:
+              template: $stack_name_compute-%index%
+              params:
+                $stack_name: { get_param: "OS::stack_name" }
+          flavor: baremetal
+          image: CC-Ubuntu-OS
+          key_name: { get_param: key_name }
+          networks:
+             - network: { get_resource: isolated_net }
+          scheduler_hints: { reservation: { get_param: reservation_id } }
+          user_data_format: SOFTWARE_CONFIG
+          software_config_transport: POLL_SERVER_HEAT
+
+  controller_ip_association:
+    type: OS::Nova::FloatingIPAssociation
+    properties:
+      floating_ip: { get_resource: controller_floating_ip }
+      server_id: { get_resource: controller }
+
+  ##########
+  # Configure hostname and /etc/hosts
+  # TODO : Find a simpler way to do this
+  ##########
+  export_hosts:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      outputs:
+        - name: hosts
+      group: script
+      config: |
+        #!/bin/sh
+        export PATH=$PATH:/opt/puppetlabs/bin
+        (echo -n $(facter ipaddress); echo -n ' '; echo -n $(facter hostname); echo -n ' '; echo $(facter hostname).openstacklocal) > ${heat_outputs_path}.hosts
+
+  populate_hosts:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      inputs:
+        - name: hosts_srv
+        - name: hosts_compute
+      group: script
+      config: |
+        #!/usr/bin/env python
+        import ast
+        import os
+        import string
+        import subprocess
+        hosts_srv = os.getenv('hosts_srv')
+        hosts_compute = os.getenv('hosts_compute')
+        if hosts_compute is not None:
+            hosts_compute = ast.literal_eval(string.replace(hosts_compute, '\n', '\\n'))
+        with open('/etc/hosts', 'a') as hosts_file:
+          hosts_file.write(hosts_srv.rstrip() + '\n')
+          for ip_host in hosts_compute.values():
+              hosts_file.write(ip_host.rstrip() + '\n')
+
+  export_hosts_srv:
+    type: OS::Heat::SoftwareDeployment
+    properties:
+      config: { get_resource: export_hosts }
+      server: { get_resource: controller }
+      signal_transport: HEAT_SIGNAL
+
+  export_hosts_compute:
+    type: OS::Heat::SoftwareDeploymentGroup
+    properties:
+      config: { get_resource: export_hosts }
+      servers: { get_attr: [compute_nodes, refs_map]}
+      signal_transport: HEAT_SIGNAL
+
+  populate_hosts_srv:
+    type: OS::Heat::SoftwareDeployment
+    depends_on:
+      - export_hosts_srv
+      - export_hosts_compute
+    properties:
+      config: { get_resource: populate_hosts }
+      server: { get_resource: controller }
+      signal_transport: HEAT_SIGNAL
+      input_values:
+        hosts_srv: { get_attr: [ export_hosts_srv, hosts ] }
+        hosts_compute: { get_attr: [ export_hosts_compute, hosts ] }
+
+  populate_hosts_compute:
+    type: OS::Heat::SoftwareDeploymentGroup
+    depends_on:
+      - export_hosts_srv
+      - export_hosts_compute
+    properties:
+      config: { get_resource: populate_hosts }
+      servers: { get_attr: [compute_nodes, refs_map]}
+      signal_transport: HEAT_SIGNAL
+      input_values:
+        hosts_srv: { get_attr: [ export_hosts_srv, hosts ] }
+        hosts_compute: { get_attr: [ export_hosts_compute, hosts ] }
+
+
+  ##########
+  # Bootstrap Puppet Server
+  ##########
+  puppet_bootstrap_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config:
+        str_replace:
+          template: |
+            #!/bin/sh
+            cd /tmp
+            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            export stack_name=$(echo $stack_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            # Rm key (will be regenerate)
+            rm -f /etc/puppetlabs/puppet/ssl/private_keys/${controller_name}.openstacklocal.pem
+            #Clone g5k repo then copy hiera and modules
+            git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
+            export MODULE_DIR=xp5k-openstack/provision/puppet/modules
+            export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
+            export PUPPET_DIR=/etc/puppetlabs/code/environments
+            mkdir $PUPPET_DIR/bootstrap
+            cp -r $MODULE_DIR $PUPPET_DIR/bootstrap/
+            cp -r $HIERA_TEMPLATES_DIR $PUPPET_DIR/bootstrap/hieradata
+            #Generate Hiera data for puppet-server and controller
+            mv $PUPPET_DIR/bootstrap/hieradata/nodes/puppetserver_controller.yaml $PUPPET_DIR/bootstrap/hieradata/nodes/${controller_name}.openstacklocal.yaml
+            sed -i "s/host1/${controller_name}.openstacklocal/g" $PUPPET_DIR/bootstrap/hieradata/nodes/${controller_name}.openstacklocal.yaml
+            #Generate hiera data for compute nodes
+            current_instance=0
+            nb_compute=$compute_node_count
+            while [ $current_instance -lt $nb_compute ]
+            do
+              echo "- ${stack_name}-compute-${current_instance}.openstacklocal" >> $PUPPET_DIR/bootstrap/hieradata/nodes/${controller_name}.openstacklocal.yaml
+              cp $PUPPET_DIR/bootstrap/hieradata/nodes/compute.yaml $PUPPET_DIR/bootstrap/hieradata/nodes/${stack_name}-compute-${current_instance}.openstacklocal.yaml
+              current_instance=$(($current_instance+1))
+            done
+            #Bootstrap Puppet Server
+            eatmydata /opt/puppetlabs/bin/puppet apply --environment bootstrap -e 'include xp,xp::locales,xp::puppet::server'
+            sync
+            #Free port 8080 : Puppetdb listen for clear HTTP on 8082 instead of 8080
+            sed -i "s/port = 8080/port = 8082/g" /etc/puppetlabs/puppetdb/conf.d/jetty.ini
+            service puppetdb restart
+
+          params:
+            $controller_heat_name: { get_attr: [controller, name] }
+            $stack_heat_name: { get_param: "OS::stack_name" }
+            $controller_public_address: { get_attr: [controller, first_address] }
+            $compute_node_count: { get_param: compute_node_count }
+
+  puppet_bootstrap_deploy:
+    type: OS::Heat::SoftwareDeployment
+    depends_on:
+      - populate_hosts_srv
+      - populate_hosts_compute
+    properties:
+      config: { get_resource: puppet_bootstrap_cfg }
+      server: { get_resource: controller }
+      signal_transport: HEAT_SIGNAL
+
+  ##########
+  # Copy Openstack Puppet modules in Puppet directory
+  ##########
+  os_modules_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config:
+        str_replace:
+          template: |
+            #!/bin/sh
+            cd /tmp
+            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            export MODULE_DIR=xp5k-openstack/provision/puppet/modules
+            export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
+            export PUPPET_DIR=/etc/puppetlabs/code/environments
+            export SCENARIO_CC=xp5k-openstack/scenarios/liberty_CC
+            #Copy modules to prod env
+            cp -r $MODULE_DIR $PUPPET_DIR/production/
+            tar xzf $SCENARIO_CC/puppet/modules-openstack.tar.gz -C $PUPPET_DIR/production/
+            cp -r $SCENARIO_CC/puppet/modules/scenario $PUPPET_DIR/production/modules-scenario
+            #Copy and update hiera data
+            cp -r $PUPPET_DIR/bootstrap/hieradata/* $PUPPET_DIR/production/hieradata
+            sed -i "s/#Uncomment after OS modules copy//g" $PUPPET_DIR/production/hieradata/nodes/${controller_name}.openstacklocal.yaml
+            echo "
+            scenario::openstack::admin_password: $OS_password
+            scenario::openstack::controller_public_address: $controller_public_address
+            scenario::openstack::storage_public_address: $controller_public_address" >> $PUPPET_DIR/production/hieradata/common.yaml
+            #Patch OS
+            sed -i '24s/apache2/httpd/' $PUPPET_DIR/production/modules-openstack/horizon/manifests/params.pp
+            sed -i 's/F78372A06FF50C80464FC1B4F7B8CEA6056E8E56/0A9AF2115F4687BD29803A206B73A36E6026DFCA/' $PUPPET_DIR/production/modules-openstack/rabbitmq/manifests/repo/apt.pp
+          params:
+            $controller_heat_name: { get_attr: [controller, name] }
+            $controller_public_address: { get_attr: [controller, first_address] }
+            $OS_password: { get_param: OS_password }
+
+  os_modules_deploy:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: puppet_bootstrap_deploy
+    properties:
+      config: { get_resource: os_modules_cfg }
+      server: { get_resource: controller }
+      signal_transport: HEAT_SIGNAL
+
+
+  ##########
+  # Run Puppet agent on Controller and add basic configuration for Openstack
+  ##########
+  puppet_controller_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config:
+        str_replace:
+          template: |
+            #!/bin/bash
+            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            /opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true
+            #Basic OS configuration
+            source /root/adminrc
+            ## Rules (allow SSH and ICMP)
+            nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
+            nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+            ## Public Bridge
+            ovs-vsctl add-port br-ex eth0 && ip addr flush eth0 && dhclient -nw br-ex
+            ## Create xs flavor
+            nova flavor-create m1.xs auto 2048 4 2 --is-public True
+            ## Images (Cirros and Debian)
+            /usr/bin/wget -q -O /tmp/cirros.img http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
+            glance image-create --name="Cirros" --visibility public --disk-format=qcow2 --container-format=bare --property architecture=x86_64 --progress --file /tmp/cirros.img
+            ## Network
+            neutron net-create public --provider:physical_network external --provider:network_type flat --router:external True
+            neutron net-create private
+            export host_ip=`/opt/puppetlabs/bin/facter ipaddress`
+            echo "$net_gw" > /tmp/net_gw
+            neutron subnet-create public $net_cidr --name public-subnet --allocation-pool start=$net_pool_start,end=$net_pool_end --gateway $net_gw --disable-dhcp
+            neutron subnet-create private 192.168.0.0/24 --name private-subnet --dns-nameserver 8.8.8.8 --allocation-pool start=192.168.0.10,end=192.168.0.200
+            neutron router-create main_router
+            neutron router-gateway-set main_router public --fixed-ip 10.40.0.5
+            neutron router-interface-add main_router private-subnet
+          params:
+            $controller_heat_name: { get_attr: [controller, name] }
+            $net_cidr: { get_param: net_cidr }
+            $net_pool_start: { get_param: net_pool_start }
+            $net_pool_end: { get_param: net_pool_end }
+            $net_gw: { get_attr: [isolated_subnet, gateway_ip] }
+
+  puppet_compute_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config:
+        str_replace:
+          template: |
+            #!/bin/bash
+            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            /opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true
+          params:
+            $controller_heat_name: { get_attr: [controller, name] }
+
+  puppet_controller_deploy:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: os_modules_deploy
+    properties:
+      config: { get_resource: puppet_controller_cfg }
+      server: { get_resource: controller }
+      signal_transport: HEAT_SIGNAL
+
+  puppet_compute_deploy:
+    type: OS::Heat::SoftwareDeploymentGroup
+    depends_on: puppet_controller_deploy
+    properties:
+      config: { get_resource: puppet_compute_cfg }
+      servers: { get_attr: [compute_nodes, refs_map]}
+      signal_transport: HEAT_SIGNAL
+
+# The parameters section gathers configuration from the user.
+parameters:
+  net_cidr:
+    label: Network CIDR
+    type: string
+    default: none
+    description: 'CIDR of the network defined in the previous parameter : Exemple : 192.168.0.0/24.'
+  net_pool_start:
+    label: Network Pool Start
+    type: string
+    default: none
+    description: 'Start of allocation pool for floating IP. Ex : 192.168.0.100 for a subnet 192.168.0.0/24.'
+  net_pool_end:
+    label: Network Pool End
+    type: string
+    default: none
+    description: 'End of allocation pool for floating IP. Ex : 192.168.0.200 for a subnet 192.168.0.0/24'
+  key_name:
+    type: string
+    description: 'Name of a KeyPair to enable SSH access to the instance'
+    default: default
+    constraints:
+    - custom_constraint: nova.keypair
+  reservation_id:
+    type: string
+    description: ID of the Blazar reservation to use for launching instances.
+    constraints:
+    - custom_constraint: blazar.reservation
+  OS_password:
+    type: string
+    description: Admin password for Openstack
+    default: demo
+  compute_node_count:
+    type: number
+    label: Number of compute nodes
+    description: Number of compute nodes in this OpenStack deployment
+    default: 1
+    constraints:
+      - range: { min: 1 }
+        description: There must be at least one compute node.
+
+#Organize Paramters
+parameter_groups:
+  - label: Common parameters
+    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
+    parameters:
+    - key_name
+    - reservation_id
+    - OS_password
+    - compute_node_count
+
+  - label: Network parameters
+    description: "This paramters group defines the network configuration of Openstack : floating IP available if you use an isolated network, not if you use sharednet."
+    parameters:
+    - net_cidr
+    - net_pool_start
+    - net_pool_end
+
+outputs:
+  horizon_dashboard:
+    description: Horizon Dashboard URL
+    value: { get_attr: [controller_floating_ip, ip] }
+  Password:
+    description: Reminder of the password configured
+    value: { get_param: OS_password }
