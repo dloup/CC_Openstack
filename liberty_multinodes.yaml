@@ -31,7 +31,7 @@ resources:
           params:
             $stack_name: { get_param: "OS::stack_name" }
       flavor: baremetal
-      image: CC-Ubuntu-OS
+      image: OS-Liberty-Puppet_base
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -48,7 +48,7 @@ resources:
           params:
             $stack_name: { get_param: "OS::stack_name" }
       flavor: baremetal
-      image: CC-Ubuntu-OS
+      image: OS-Liberty-Puppet_base
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -65,7 +65,7 @@ resources:
           params:
             $stack_name: { get_param: "OS::stack_name" }
       flavor: baremetal
-      image: CC-Ubuntu-OS
+      image: OS-Liberty-Puppet_base
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -86,7 +86,7 @@ resources:
               params:
                 $stack_name: { get_param: "OS::stack_name" }
           flavor: baremetal
-          image: CC-Ubuntu-OS
+          image: OS-Liberty-Puppet_base
           key_name: { get_param: key_name }
           networks:
              - network: sharednet1
