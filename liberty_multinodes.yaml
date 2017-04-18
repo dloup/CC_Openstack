@@ -206,7 +206,7 @@ resources:
             # Rm key (will be regenerate)
             rm -f /etc/puppetlabs/puppet/ssl/private_keys/${controller_name}.openstacklocal.pem
             #Clone g5k repo then copy hiera and modules
-            git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
+            git clone -b CC_liberty https://github.com/dloup/xp5k-openstack.git
             #Revert a commit that prevent multi node deployment
             git revert --no-commit f24f772
             export MODULE_DIR=xp5k-openstack/provision/puppet/modules

@@ -118,7 +118,7 @@ resources:
             #Clone repo and configure Ruby
             chown root:root /tmp && chmod 777 /tmp
             cd /root/
-            git clone https://github.com/dloup/xp5k-openstack -b CC_test
+            git clone https://github.com/dloup/xp5k-openstack -b CC_liberty
             apt-add-repository -y ppa:brightbox/ruby-ng
             apt-get update
             apt-get install -y ruby2.1 ruby2.1-dev

@@ -177,7 +177,7 @@ resources:
             # Rm key (will be regenerate)
             rm -f /etc/puppetlabs/puppet/ssl/private_keys/${controller_name}.openstacklocal.pem
             #Clone g5k repo then copy hiera and modules
-            git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
+            git clone -b CC_liberty https://github.com/dloup/xp5k-openstack.git
             export MODULE_DIR=xp5k-openstack/provision/puppet/modules
             export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
             export PUPPET_DIR=/etc/puppetlabs/code/environments
