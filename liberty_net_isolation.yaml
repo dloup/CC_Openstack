@@ -149,7 +149,7 @@ resources:
           template: |
             #!/bin/sh
             cd /tmp
-            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            #Fix host name ( Upperase to lower case and '_' to '-' )
             export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
             export stack_name=$(echo $stack_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
             # Rm key (will be regenerate)
@@ -209,7 +209,7 @@ resources:
           template: |
             #!/bin/sh
             cd /tmp
-            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            #Fix host name ( Upperase to lower case and '_' to '-' )
             export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
             export MODULE_DIR=xp5k-openstack/provision/puppet/modules
             export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
@@ -254,7 +254,7 @@ resources:
         str_replace:
           template: |
             #!/bin/bash
-            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            #Fix host name ( Upperase to lower case and '_' to '-' )
             export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
             /opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true
             #Basic OS configuration
