@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: Bootstrap Puppet server with Heat on Chameleon
+description: "Deploys Openstack Libery using xp5k. It will deploy a frontend, a controller and a puppet server. xp5k will run on the frontend, it's progression can be view using 'screen -x rakerun' on the frontend node"
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15

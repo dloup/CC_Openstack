@@ -1,5 +1,5 @@
 # This describes what is deployed by this template.
-description: "Deploys Openstack Liberty without network isolation : The public network of the OS instance is the sharednet of Chameleon. We end up with a Controller (storage, network, horizon, ...) and a configurable number of Compute nodes."
+description: "Make a \"multinodes\" deployment of Openstack Liberty without network isolation. We end up with a controller, a nework node, a storage node and a custom number of compute nodes."
 
 # This defines the minimum Heat version required by this template.
 heat_template_version: 2015-10-15
@@ -31,7 +31,41 @@ resources:
           params:
             $stack_name: { get_param: "OS::stack_name" }
       flavor: baremetal
-      image: CC-Ubuntu-OS_controller
+      image: CC-Ubuntu-OS
+      key_name: { get_param: key_name }
+      networks:
+         - network: sharednet1
+      scheduler_hints: { reservation: { get_param: reservation_id } }
+      user_data_format: SOFTWARE_CONFIG
+      software_config_transport: POLL_SERVER_HEAT
+
+  network_node:
+    type: OS::Nova::Server
+    properties:
+      name:
+        str_replace:
+          template: $stack_name_network_node
+          params:
+            $stack_name: { get_param: "OS::stack_name" }
+      flavor: baremetal
+      image: CC-Ubuntu-OS
+      key_name: { get_param: key_name }
+      networks:
+         - network: sharednet1
+      scheduler_hints: { reservation: { get_param: reservation_id } }
+      user_data_format: SOFTWARE_CONFIG
+      software_config_transport: POLL_SERVER_HEAT
+
+  storage_node:
+    type: OS::Nova::Server
+    properties:
+      name:
+        str_replace:
+          template: $stack_name_storage_node
+          params:
+            $stack_name: { get_param: "OS::stack_name" }
+      flavor: baremetal
+      image: CC-Ubuntu-OS
       key_name: { get_param: key_name }
       networks:
          - network: sharednet1
@@ -98,16 +132,22 @@ resources:
         hosts_compute = os.getenv('hosts_compute')
         if hosts_compute is not None:
             hosts_compute = ast.literal_eval(string.replace(hosts_compute, '\n', '\\n'))
+        if hosts_srv is not None:
+            hosts_srv = ast.literal_eval(string.replace(hosts_srv, '\n', '\\n'))
         with open('/etc/hosts', 'a') as hosts_file:
-          hosts_file.write(hosts_srv.rstrip() + '\n')
+          for ip_host in hosts_srv.values():
+              hosts_file.write(ip_host.rstrip() + '\n')
           for ip_host in hosts_compute.values():
               hosts_file.write(ip_host.rstrip() + '\n')
 
   export_hosts_srv:
-    type: OS::Heat::SoftwareDeployment
+    type: OS::Heat::SoftwareDeploymentGroup
     properties:
       config: { get_resource: export_hosts }
-      server: { get_resource: controller }
+      servers: { '0': {get_resource: controller},
+                 '1': {get_resource: network_node},
+                 '2': {get_resource: storage_node}
+               }
       signal_transport: HEAT_SIGNAL
 
   export_hosts_compute:
@@ -118,13 +158,16 @@ resources:
       signal_transport: HEAT_SIGNAL
 
   populate_hosts_srv:
-    type: OS::Heat::SoftwareDeployment
+    type: OS::Heat::SoftwareDeploymentGroup
     depends_on:
       - export_hosts_srv
       - export_hosts_compute
     properties:
       config: { get_resource: populate_hosts }
-      server: { get_resource: controller }
+      servers: { '0': {get_resource: controller},
+                 '1': {get_resource: network_node},
+                 '2': {get_resource: storage_node}
+               }
       signal_transport: HEAT_SIGNAL
       input_values:
         hosts_srv: { get_attr: [ export_hosts_srv, hosts ] }
@@ -157,11 +200,15 @@ resources:
             cd /tmp
             #Fix host name ( remove upperase to lower case and '_' to '-' )
             export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            export storage_node_name=$(echo $storage_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            export network_node_name=$(echo $network_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
             export stack_name=$(echo $stack_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
             # Rm key (will be regenerate)
             rm -f /etc/puppetlabs/puppet/ssl/private_keys/${controller_name}.openstacklocal.pem
             #Clone g5k repo then copy hiera and modules
             git clone -b CC_test https://github.com/dloup/xp5k-openstack.git
+            #Revert a commit that prevent multi node deployment
+            git revert --no-commit f24f772
             export MODULE_DIR=xp5k-openstack/provision/puppet/modules
             export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
             export PUPPET_DIR=/etc/puppetlabs/code/environments
@@ -171,6 +218,12 @@ resources:
             #Generate Hiera data for puppet-server and controller
             mv $PUPPET_DIR/bootstrap/hieradata/nodes/puppetserver_controller.yaml $PUPPET_DIR/bootstrap/hieradata/nodes/${controller_name}.openstacklocal.yaml
             sed -i "s/host1/${controller_name}.openstacklocal/g" $PUPPET_DIR/bootstrap/hieradata/nodes/${controller_name}.openstacklocal.yaml
+            #Generate Hiera data for network node
+            mv $PUPPET_DIR/bootstrap/hieradata/nodes/network.yaml $PUPPET_DIR/bootstrap/hieradata/nodes/${network_node_name}.openstacklocal.yaml
+            echo "- ${network_node_name}.openstacklocal" >> $PUPPET_DIR/bootstrap/hieradata/nodes/${controller_name}.openstacklocal.yaml
+            #Generate Hiera data for storage node
+            mv $PUPPET_DIR/bootstrap/hieradata/nodes/storage.yaml $PUPPET_DIR/bootstrap/hieradata/nodes/${storage_node_name}.openstacklocal.yaml
+            echo "- ${storage_node_name}.openstacklocal" >> $PUPPET_DIR/bootstrap/hieradata/nodes/${controller_name}.openstacklocal.yaml
             #Generate hiera data for compute nodes
             current_instance=0
             nb_compute=$compute_node_count
@@ -189,6 +242,8 @@ resources:
 
           params:
             $controller_heat_name: { get_attr: [controller, name] }
+            $network_heat_name: { get_attr: [network_node, name] }
+            $storage_heat_name: { get_attr: [storage_node, name] }
             $stack_heat_name: { get_param: "OS::stack_name" }
             $controller_public_address: { get_attr: [controller, first_address] }
             $compute_node_count: { get_param: compute_node_count }
@@ -220,24 +275,26 @@ resources:
             export MODULE_DIR=xp5k-openstack/provision/puppet/modules
             export HIERA_TEMPLATES_DIR=xp5k-openstack/scenarios/liberty_CC/hiera/templates
             export PUPPET_DIR=/etc/puppetlabs/code/environments
-            export SCENARIO_CC=xp5k-openstack/scenarios/liberty_CC
+            export SCENARIO_CC=xp5k-openstack/scenarios/liberty_multinodes
             #Copy modules to prod env
             cp -r $MODULE_DIR $PUPPET_DIR/production/
-            tar xzf $SCENARIO_CC/puppet/modules-openstack.tar.gz -C $PUPPET_DIR/production/
+            #TODO move this tar to a simpler path
+            tar xzf /tmp/xp5k-openstack/scenarios/liberty_CC/puppet/modules-openstack.tar.gz -C $PUPPET_DIR/production/
             cp -r $SCENARIO_CC/puppet/modules/scenario $PUPPET_DIR/production/modules-scenario
             #Copy and update hiera data
             cp -r $PUPPET_DIR/bootstrap/hieradata/* $PUPPET_DIR/production/hieradata
-            sed -i "s/#Uncomment after OS modules copy//g" $PUPPET_DIR/production/hieradata/nodes/${controller_name}.openstacklocal.yaml
+            sed -i "0,/#Uncomment after OS modules copy/ s/#Uncomment after OS modules copy//g" $PUPPET_DIR/production/hieradata/nodes/${controller_name}.openstacklocal.yaml
             echo "
             scenario::openstack::admin_password: $OS_password
             scenario::openstack::controller_public_address: $controller_public_address
-            scenario::openstack::storage_public_address: $controller_public_address" >> $PUPPET_DIR/production/hieradata/common.yaml
+            scenario::openstack::storage_public_address: $storage_public_address" >> $PUPPET_DIR/production/hieradata/common.yaml
             #Patch OS
             sed -i '24s/apache2/httpd/' $PUPPET_DIR/production/modules-openstack/horizon/manifests/params.pp
             sed -i 's/F78372A06FF50C80464FC1B4F7B8CEA6056E8E56/0A9AF2115F4687BD29803A206B73A36E6026DFCA/' $PUPPET_DIR/production/modules-openstack/rabbitmq/manifests/repo/apt.pp
           params:
             $controller_heat_name: { get_attr: [controller, name] }
             $controller_public_address: { get_attr: [controller, first_address] }
+            $storage_public_address: { get_attr: [storage_node, first_address] }
             $OS_password: { get_param: OS_password }
 
   os_modules_deploy:
@@ -252,7 +309,7 @@ resources:
   ##########
   # Run Puppet agent on Controller and add basic configuration for Openstack
   ##########
-  puppet_controller_cfg:
+  controller_OS_cfg:
     type: OS::Heat::SoftwareConfig
     properties:
       group: script
@@ -260,16 +317,11 @@ resources:
         str_replace:
           template: |
             #!/bin/bash
-            #Fix host name ( remove upperase to lower case and '_' to '-' )
-            export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
-            /opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true
             #Basic OS configuration
             source /root/adminrc
               ## Rules (allow SSH and ICMP)
             nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
             nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
-              ## Public Bridge
-            ovs-vsctl add-port br-ex eth0 && ip addr flush eth0 && dhclient -nw br-ex
               ## Create xs flavor
             nova flavor-create m1.xs auto 2048 4 2 --is-public True
               ## Images (Cirros and Debian)
@@ -297,7 +349,7 @@ resources:
             $controller_heat_name: { get_attr: [controller, name] }
             $router_ip: { get_attr: [router_port, fixed_ips, 0, ip_address] }
 
-  puppet_compute_cfg:
+  puppet_client_cfg:
     type: OS::Heat::SoftwareConfig
     properties:
       group: script
@@ -311,20 +363,65 @@ resources:
           params:
             $controller_heat_name: { get_attr: [controller, name] }
 
+  puppet_network_cfg:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config:
+        str_replace:
+          template: |
+            #!/bin/bash
+            #Fix host name ( remove upperase to lower case and '_' to '-' )
+            export controller_name=$(echo $controller_heat_name | tr '[:upper:]' '[:lower:]' | tr '_' '-')
+            /opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true
+            ## Public Bridge
+            ovs-vsctl add-port br-ex eth0 && ip addr flush eth0 && dhclient -nw br-ex
+          params:
+            $controller_heat_name: { get_attr: [controller, name] }
+
+  #Launch puppet on Controller then other client
   puppet_controller_deploy:
     type: OS::Heat::SoftwareDeployment
     depends_on: os_modules_deploy
     properties:
-      config: { get_resource: puppet_controller_cfg }
+      config: { get_resource: puppet_client_cfg }
       server: { get_resource: controller }
+      signal_transport: HEAT_SIGNAL
+
+  puppet_network_deploy:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: puppet_controller_deploy
+    properties:
+      config: { get_resource: puppet_network_cfg }
+      server: { get_resource: network_node}
+      signal_transport: HEAT_SIGNAL
+
+  puppet_storage_deploy:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: puppet_controller_deploy
+    properties:
+      config: { get_resource: puppet_client_cfg }
+      server: { get_resource: storage_node}
       signal_transport: HEAT_SIGNAL
 
   puppet_compute_deploy:
     type: OS::Heat::SoftwareDeploymentGroup
     depends_on: puppet_controller_deploy
     properties:
-      config: { get_resource: puppet_compute_cfg }
+      config: { get_resource: puppet_client_cfg }
       servers: { get_attr: [compute_nodes, refs_map]}
+      signal_transport: HEAT_SIGNAL
+
+  #Run final OS configuration once every nodes has run puppet
+  controller_OS_deploy:
+    type: OS::Heat::SoftwareDeployment
+    depends_on:
+      - puppet_controller_deploy
+      - puppet_network_deploy
+      - puppet_storage_deploy
+    properties:
+      config: { get_resource: controller_OS_cfg }
+      server: { get_resource: controller }
       signal_transport: HEAT_SIGNAL
 
 # The parameters section gathers configuration from the user.
