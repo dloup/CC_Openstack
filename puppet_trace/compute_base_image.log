@@ -1,0 +1,1633 @@
+[0;32mInfo: Caching certificate for ca[0m
+[0;32mInfo: csr_attributes file loading from /etc/puppetlabs/puppet/csr_attributes.yaml[0m
+[0;32mInfo: Creating a new SSL certificate request for puppet-trace-compute-0.openstacklocal[0m
+[0;32mInfo: Certificate Request fingerprint (SHA256): FD:DE:46:74:BE:D3:2E:DB:A4:4A:96:89:3E:CF:40:00:17:15:C9:9D:41:20:E7:E7:2D:BA:B6:B8:42:6C:10:23[0m
+[0;32mInfo: Caching certificate for puppet-trace-compute-0.openstacklocal[0m
+[0;32mInfo: Caching certificate_revocation_list for ca[0m
+[0;32mInfo: Caching certificate for ca[0m
+[1;33mWarning: Unable to fetch my node definition, but the agent run will continue:[0m
+[1;33mWarning: Error 400 on SERVER: Could not retrieve facts for puppet-trace-compute-0.openstacklocal: Failed to find facts from PuppetDB at puppet:8140: Failed to execute '/pdb/query/v4/nodes/puppet-trace-compute-0.openstacklocal/facts' on at least 1 of the following 'server_urls': https://puppetdb:8081[0m
+[0;32mInfo: Retrieving pluginfacts[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/facts.d/os_service_default.txt]/ensure: defined content as '{md5}b936643e92fa0d427d3270fcd7f062e6'[0m
+[0;32mInfo: Retrieving plugin[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/apt_reboot_required.rb]/ensure: defined content as '{md5}7c3fc46f254fc4b4579d011578caaadb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/apt_update_last_success.rb]/ensure: defined content as '{md5}2926ff059cd2f63a2a7824ba898837f9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/apt_updates.rb]/ensure: defined content as '{md5}6c2f2204761b2d8842e0db6235d900cb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/concat_basedir.rb]/ensure: defined content as '{md5}ff080677e7f192b9b96911698b0b9b3d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/facter_dot_d.rb]/ensure: defined content as '{md5}15c1ec06d198c8e7cf2339ca34211b7a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/ip6tables_version.rb]/ensure: defined content as '{md5}091123ad703f1706686bca4398c5b06f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/iptables_persistent_version.rb]/ensure: defined content as '{md5}8ea76fecb8032174823ef6fb846c83c9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/iptables_version.rb]/ensure: defined content as '{md5}facbd760223f236538b731c1d1f6cf8f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/mysql_server_id.rb]/ensure: defined content as '{md5}2102724316f84a45906880d9551ef125'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/mysql_version.rb]/ensure: defined content as '{md5}e30648f3d394a1cbdd4e54eb5c28d28c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/os_package_type.rb]/ensure: defined content as '{md5}16ec68836f18dd099300270ac2aa3de5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/os_service_default.rb]/ensure: defined content as '{md5}78cfd5aa6ff16bffd265518b88486115'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/pe_version.rb]/ensure: defined content as '{md5}4a9353952963b011759f3e6652a10da5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/pip_version.rb]/ensure: defined content as '{md5}a7c7f896e255fdb72a0892906f3798b2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/puppet_vardir.rb]/ensure: defined content as '{md5}c7ddc97e8a84ded3dd93baa5b9b3283d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/python_version.rb]/ensure: defined content as '{md5}ea43d00b40debb8caabb9e934910c39e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/rabbitmq_nodename.rb]/ensure: defined content as '{md5}776f3d00c9fb5d7daae47cfe7a2327eb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/rabbitmq_version.rb]/ensure: defined content as '{md5}80b1d46adaeb5fcd7d2ca2293d3aa483'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/root_home.rb]/ensure: defined content as '{md5}d9c8276acdceb7340d95f60c36dcdcc5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/staging_http_get.rb]/ensure: defined content as '{md5}1f89d73e82135c4c9533119e2a95690d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/staging_windir.rb]/ensure: defined content as '{md5}6897a62c26ff15041cae6b62bf9b7a35'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/util]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/util/puppet_settings.rb]/ensure: defined content as '{md5}9f1d2593d0ae56bfca89d4b9266aeee1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/facter/virtualenv_version.rb]/ensure: defined content as '{md5}a1af6b2168eafc796631ddcfacf2401c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/functions]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/functions/type_of.rb]/ensure: defined content as '{md5}71e19f89e167c45ec691ea6c7d319625'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/abs.rb]/ensure: defined content as '{md5}32161bd0435fdfc2aec2fc559d2b454b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/any2array.rb]/ensure: defined content as '{md5}a81e71d6b67a551d38770ba9a1948a75'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/assert_private.rb]/ensure: defined content as '{md5}1365284f9e474ecec24cfe43ee8e7cf4'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/base64.rb]/ensure: defined content as '{md5}ae25adf92295df67ebd9edfabc9ecdd6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/basename.rb]/ensure: defined content as '{md5}c61952b3f68fd86408c84fca2c3febb1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/bool2httpd.rb]/ensure: defined content as '{md5}05d5deeb6e0c31acee7c55b249ec8e06'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/bool2num.rb]/ensure: defined content as '{md5}f953f5fc094c2ae3908a72d8840ba291'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/bool2str.rb]/ensure: defined content as '{md5}34497af8db94754542b9d4cfacc8a27f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/camelcase.rb]/ensure: defined content as '{md5}71c67b71eac4b7f46a0dd22cb915d2e6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/capitalize.rb]/ensure: defined content as '{md5}da131748a9d32da9eb0b6438e39377eb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/ceiling.rb]/ensure: defined content as '{md5}dfa9b1c75ce89344026b3b5aed2d190f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/check_array_of_hash.rb]/ensure: defined content as '{md5}cd3d7fa9f2e89890632854382bb19025'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/chomp.rb]/ensure: defined content as '{md5}2b7dc42f9967edd34cfa0ba9a97229ca'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/chop.rb]/ensure: defined content as '{md5}0ec76f54afd94201f35785dfeb2092b5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/concat.rb]/ensure: defined content as '{md5}2a12f95e94669129827ee2f2a26349c3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/concat_getparam.rb]/ensure: defined content as '{md5}7654b44a87a05b2f2e9de2eaadf1ff8f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/concat_is_bool.rb]/ensure: defined content as '{md5}a5dc6980d7f27d1b858e791964682756'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/count.rb]/ensure: defined content as '{md5}9eb74eccd93e2b3c87fd5ea14e329eba'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/create_ini_settings.rb]/ensure: defined content as '{md5}c5d2c4531f93395ce0e6c604a816a0bb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/date.rb]/ensure: defined content as '{md5}8c1b8ad6e4a0f77ee816000e4d096372'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/deep_merge.rb]/ensure: defined content as '{md5}d83696855578fb81b64b9e92b9c7cc7c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/defined_with_params.rb]/ensure: defined content as '{md5}ffab4433d03f32b551f2ea024a2948fc'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/delete.rb]/ensure: defined content as '{md5}cec92c5de6d748c8dc93ca7d25ac1c68'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/delete_at.rb]/ensure: defined content as '{md5}6bc24b79390d463d8be95396c963381a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/delete_undef_values.rb]/ensure: defined content as '{md5}b32d4a3925753b2eb2c318cbd7f14404'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/delete_values.rb]/ensure: defined content as '{md5}39b147f7d369bb5f809044b6341954a2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/device_for_network.rb]/ensure: defined content as '{md5}05b3e30815d964c12e417d0b6b3df813'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/difference.rb]/ensure: defined content as '{md5}e31b95fbaf974cf853a510177368bfb9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/dirname.rb]/ensure: defined content as '{md5}8a5579f9a9a13fd737ba65eccf8e6d5a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/downcase.rb]/ensure: defined content as '{md5}73121616d73339cf8dd10e0de61a6c50'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/empty.rb]/ensure: defined content as '{md5}0b6ca9d0550a39c1ca50fc3d1ecbc98c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/ensure_packages.rb]/ensure: defined content as '{md5}fbed5c0c9bf82b7746e01f15f89d184f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/ensure_resource.rb]/ensure: defined content as '{md5}de703fe63392b939fc2b4392975263de'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/flatten.rb]/ensure: defined content as '{md5}25777b76f9719162a8bab640e5595b7a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/floor.rb]/ensure: defined content as '{md5}42cad4c689231a51526c55a6f0985d1f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/fqdn_rand_string.rb]/ensure: defined content as '{md5}375a7436960805b13ae34e2f970da443'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/fqdn_rotate.rb]/ensure: defined content as '{md5}2485c2eab774a8b1f52de9c17d4b0833'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/get_ext_net_name.rb]/ensure: defined content as '{md5}2fa696048dd0b917844b270cf7d29409'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/get_in_addr_arpa.rb]/ensure: defined content as '{md5}b5d2416fc26683bb83ef652576467e96'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/get_module_path.rb]/ensure: defined content as '{md5}d4bf50da25c0b98d26b75354fa1bcc45'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/getparam.rb]/ensure: defined content as '{md5}4dd7a0e35f4a3780dcfc9b19b4e0006e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/getvar.rb]/ensure: defined content as '{md5}ab01ce68140bbdd84162a519a14ece3b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/grep.rb]/ensure: defined content as '{md5}5682995af458b05f3b53dd794c4bf896'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/has_interface_with.rb]/ensure: defined content as '{md5}ee3a1d6193951939b492a69ef170faac'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/has_ip_address.rb]/ensure: defined content as '{md5}ee207f47906455a5aa49c4fb219dd325'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/has_ip_network.rb]/ensure: defined content as '{md5}b4d726c8b2a0afac81ced8a3a28aa731'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/has_key.rb]/ensure: defined content as '{md5}7cd9728c38f0b0065f832dabd62b0e7e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/hash.rb]/ensure: defined content as '{md5}9d072527dfc7354b69292e9302906530'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/intersection.rb]/ensure: defined content as '{md5}924ac4aceec7b896952166a7ec08fdb1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/ip_for_network.rb]/ensure: defined content as '{md5}74c6d11bbd44f76484655835a9aa3412'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_array.rb]/ensure: defined content as '{md5}875ca4356cb0d7a10606fb146b4a3d11'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_bool.rb]/ensure: defined content as '{md5}e693b7c4b5366cff1380b6e0c7dd7b11'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_domain_name.rb]/ensure: defined content as '{md5}6ca1f2708add756a6803b29d593d5830'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_float.rb]/ensure: defined content as '{md5}10e0d3ecf75fac15e415aee79acf70dc'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_function_available.rb]/ensure: defined content as '{md5}628428bbcd9313ce09783d9484330e09'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_hash.rb]/ensure: defined content as '{md5}8c7d9a05084dab0389d1b779c8a05b1a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_integer.rb]/ensure: defined content as '{md5}c665be82686aa4729959bb42c66a7510'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_ip_address.rb]/ensure: defined content as '{md5}a714a736c1560e8739aaacd9030cca00'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_mac_address.rb]/ensure: defined content as '{md5}288bd4b38d4df42a83681f13e7eaaee0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_numeric.rb]/ensure: defined content as '{md5}93ddc9d4c0834a5e5e0562d7b3cdce91'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_service_default.rb]/ensure: defined content as '{md5}2bd1ae4e1aa42122ddbb26371a79d69a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/is_string.rb]/ensure: defined content as '{md5}2bd9a652bbb2668323eee6c57729ff64'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/join.rb]/ensure: defined content as '{md5}a285a05c015ae278608f6454aef211ea'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/join_keys_to_values.rb]/ensure: defined content as '{md5}f29da49531228f6ca5b3aa0df00a14c2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/keys.rb]/ensure: defined content as '{md5}eb6ac815ea14fbf423580ed903ef7bad'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/loadyaml.rb]/ensure: defined content as '{md5}2b912f257aa078e376d3b3f6a86c2a00'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/lstrip.rb]/ensure: defined content as '{md5}20a9b1fa077c16f34e0ef5448b895698'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/max.rb]/ensure: defined content as '{md5}f652fd0b46ef7d2fbdb42b141f8fdd1d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/member.rb]/ensure: defined content as '{md5}3c5375ebf3e2dafa84903009f0f1f47c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/memcached_max_memory.rb]/ensure: defined content as '{md5}edc87a9d229013298027a075e3eb8795'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/merge.rb]/ensure: defined content as '{md5}f3dcc5c83440cdda2036cce69b61a14b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/min.rb]/ensure: defined content as '{md5}0d2a1b7e735ab251c5469e735fa3f4c6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/mongodb_password.rb]/ensure: defined content as '{md5}34c8532f5f22156efc24c37363d64037'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/mysql_deepmerge.rb]/ensure: defined content as '{md5}2b5040ee8cd75a81cf881851e922833a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/mysql_dirname.rb]/ensure: defined content as '{md5}820ba09a6a0df639da560b41cb31242f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/mysql_password.rb]/ensure: defined content as '{md5}100a3fa5ccb4f50c96d7f5167d43737f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/mysql_strip_hash.rb]/ensure: defined content as '{md5}3efe69f1eb189b2913e178b8472aaede'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/num2bool.rb]/ensure: defined content as '{md5}605c12fa518c87ed2c66ae153e0686ce'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/os_any2array.rb]/ensure: defined content as '{md5}f002c4a7168b4446719fcd4d0083320e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/os_database_connection.rb]/ensure: defined content as '{md5}f50c5c418a4745f67b863351aa421371'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/parsejson.rb]/ensure: defined content as '{md5}e7f968c34928107b84cd0860daf50ab1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/parseyaml.rb]/ensure: defined content as '{md5}00f10ec1e2b050e23d80c256061ebdd7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/pick.rb]/ensure: defined content as '{md5}bf01f13bbfe2318e7f6a302ac7c4433f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/pick_default.rb]/ensure: defined content as '{md5}ad3ea60262de408767786d37a54d45dc'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/postgresql_acls_to_resources_hash.rb]/ensure: defined content as '{md5}d518a7959b950874820a3b0a7a324488'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/postgresql_escape.rb]/ensure: defined content as '{md5}2e136fcd653ab38d831c5b40806d47d1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/postgresql_password.rb]/ensure: defined content as '{md5}820da02a888ab42357fe9bc2352b1c37'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/prefix.rb]/ensure: defined content as '{md5}e377fd64bd63dde6c9660aa75aca4942'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/private.rb]/ensure: defined content as '{md5}1500a21d5cf19961c5b1d476df892d92'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/pw_hash.rb]/ensure: defined content as '{md5}02ed57b9b2b1e6266aa52d9680eed412'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/range.rb]/ensure: defined content as '{md5}b8bbbc3179ea8e1c84952137cfc97cd0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/reject.rb]/ensure: defined content as '{md5}689f6a7c961a55fe9dcd240921f4c7f9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/reverse.rb]/ensure: defined content as '{md5}b234b54b8cd62b2d67ccd70489ffdccf'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/rstrip.rb]/ensure: defined content as '{md5}b4e4ada41f7c1d2fcad073ce6344980f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/scope_defaults.rb]/ensure: defined content as '{md5}da916d46f3ff3be8359f75c93c2b5532'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/shuffle.rb]/ensure: defined content as '{md5}d50f72b0aeb921e64d2482f62488e2f3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/size.rb]/ensure: defined content as '{md5}8972d48c0f9e487d659bd7326b40b642'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/sort.rb]/ensure: defined content as '{md5}504b033b438461ca4f9764feeb017833'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/squeeze.rb]/ensure: defined content as '{md5}541f85b4203b55c9931d3d6ecd5c75f8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/staging_parse.rb]/ensure: defined content as '{md5}cf6a6648b567b6efd3d0741e5f690ca8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/str2bool.rb]/ensure: defined content as '{md5}6320f1a50fd28ec027981cd1fb8ffdd0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/str2saltedsha512.rb]/ensure: defined content as '{md5}49afad7b386be38ce53deaefef326e85'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/strftime.rb]/ensure: defined content as '{md5}e02e01a598ca5d7d6eee0ba22440304a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/strip.rb]/ensure: defined content as '{md5}85d70ab95492e3e4ca5f0b5ec3f284a9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/suffix.rb]/ensure: defined content as '{md5}109279db4180441e75545dbd5f273298'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/swapcase.rb]/ensure: defined content as '{md5}b17a9f3cb0271451d309e4b4f52dd651'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/time.rb]/ensure: defined content as '{md5}08d88d52abd1e230e3a2f82107545d48'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/to_bytes.rb]/ensure: defined content as '{md5}65437027687b6172173b3a211a799e37'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/type.rb]/ensure: defined content as '{md5}4709f7ab8a8aad62d77a3c5d91a3aa08'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/type3x.rb]/ensure: defined content as '{md5}f9bf4de8341afb0c677c26b40ec8a2b2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/union.rb]/ensure: defined content as '{md5}137998fe47decf25aede20f0c0155a4c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/unique.rb]/ensure: defined content as '{md5}c1bb4a8aeebd09ba3e4c8bc3702cfd60'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/upcase.rb]/ensure: defined content as '{md5}c475c4d9d0ed46bcf0adf5de63ba1e82'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/uriescape.rb]/ensure: defined content as '{md5}d912ba09ba3f58c70988e662e05ffbe8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_absolute_path.rb]/ensure: defined content as '{md5}d229bb0ff30405f9c6f505dadfebdc34'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_array.rb]/ensure: defined content as '{md5}72b29289b8af1cfc3662ef9be78911b8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_augeas.rb]/ensure: defined content as '{md5}b57e68fca390759782885474dc3ab2d0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_bool.rb]/ensure: defined content as '{md5}a712634a000024398b3c6cd4ecc46463'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_cmd.rb]/ensure: defined content as '{md5}57b3b128c035802fb67754eed3a88475'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_hash.rb]/ensure: defined content as '{md5}e9cfaca68751524efe16ecf2f958a9a0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_integer.rb]/ensure: defined content as '{md5}53d5a7effe41cdebc5acde2ea718ad31'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_ipv4_address.rb]/ensure: defined content as '{md5}a8fb6f0ca36aa460d462c07c2af5d5a2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_ipv6_address.rb]/ensure: defined content as '{md5}4699238e4cad60e7e1428905523eaeb7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_network_vlan_ranges.rb]/ensure: defined content as '{md5}c6b943bebabce85fb665d70f31d0868a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_numeric.rb]/ensure: defined content as '{md5}bab908e866b78a51412f827ad9f5cf20'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_re.rb]/ensure: defined content as '{md5}c6664b3943bc820415a43f16372dc2a9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_slength.rb]/ensure: defined content as '{md5}7e67c213509b9383707819cc612b2a29'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_string.rb]/ensure: defined content as '{md5}cf6a20877a27b1073d63fdd522af50bb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_tunnel_id_ranges.rb]/ensure: defined content as '{md5}147a6488352ab5cca8b7c08a8b98d13c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_vni_ranges.rb]/ensure: defined content as '{md5}d3a0272b5ee197164c32abc3d96f3ad8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_vxlan_udp_port.rb]/ensure: defined content as '{md5}2e7a8f9b954c23d5e254e1d6f59f7377'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/validate_yum_hash.rb]/ensure: defined content as '{md5}d4c55a8b04eace259fdfaf813ba0cab3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/values.rb]/ensure: defined content as '{md5}066a6e4170e5034edb9a80463dff2bb5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/values_at.rb]/ensure: defined content as '{md5}325a899e0201e8df5bd483fec6f12d76'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/parser/functions/zip.rb]/ensure: defined content as '{md5}a89d5e802bc1e63e52020c2ddbaaca2c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/a2mod]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/a2mod.rb]/ensure: defined content as '{md5}03ed73d680787dd126ea37a03be0b236'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/a2mod/a2mod.rb]/ensure: defined content as '{md5}d986d8e8373f3f31c97359381c180628'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/a2mod/gentoo.rb]/ensure: defined content as '{md5}2492d446adbb68f678e86a75eb7ff3bd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/a2mod/modfix.rb]/ensure: defined content as '{md5}b689a1c83c9ccd8590399c67f3e588e5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/a2mod/redhat.rb]/ensure: defined content as '{md5}c39b80e75e7d0666def31c2a6cdedb0b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/aodh_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/aodh_config/ini_setting.rb]/ensure: defined content as '{md5}c75e6e522009e68cf8b438895e851697'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/apt_key]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/apt_key/apt_key.rb]/ensure: defined content as '{md5}16e6e4562fdbc80cd0d0c6bd25baceac'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ceilometer_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ceilometer_config/ini_setting.rb]/ensure: defined content as '{md5}e05d54b56ad1f21e40420687cc7736fb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cinder_api_paste_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cinder_api_paste_ini/ini_setting.rb]/ensure: defined content as '{md5}36cc1e3e4d0256e901debdc225f6c595'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cinder_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cinder_config/ini_setting.rb]/ensure: defined content as '{md5}af9732d218b871b46ea19d48acc6593e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/crmsh.rb]/ensure: defined content as '{md5}582646622691ccb69e104650af97cbe1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_clone]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_clone/crm.rb]/ensure: defined content as '{md5}ff6860f952c5cd129f0d8365a3a0e6da'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_clone/pcs.rb]/ensure: defined content as '{md5}52aaaaac9beed1ae5903983b45646c49'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_colocation]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_colocation/crm.rb]/ensure: defined content as '{md5}18e20581297409393e4ffb8ec229f36f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_colocation/pcs.rb]/ensure: defined content as '{md5}9ea1d2a315d72c25c227de95945e7f2f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_commit]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_commit/crm.rb]/ensure: defined content as '{md5}3e1496661767d11cb45fc4e5248d2e51'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_commit/pcs.rb]/ensure: defined content as '{md5}c8d3fa20828a72b3f804654d55962205'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_group]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_group/crm.rb]/ensure: defined content as '{md5}f6762adecab11ca7be218423fd924690'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_group/pcs.rb]/ensure: defined content as '{md5}1528ca31933b2703d770c00ee68a91d7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_location]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_location/crm.rb]/ensure: defined content as '{md5}c7cb6ba0d830bda5cbe10a26d75ef216'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_location/pcs.rb]/ensure: defined content as '{md5}3a6a63fde091a685ad3121e9a394c9ca'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_order]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_order/crm.rb]/ensure: defined content as '{md5}c0b878c2c633653a2faf0af5b24691df'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_order/pcs.rb]/ensure: defined content as '{md5}09c5fa3a7e0dd063eca0848ac5f87581'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_primitive]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_primitive/crm.rb]/ensure: defined content as '{md5}52eaab47fceb73c3603e5aafba130bc2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_primitive/pcs.rb]/ensure: defined content as '{md5}b708e547932d411c2a8a3e13733e1578'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_property]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_property/crm.rb]/ensure: defined content as '{md5}cb590166f50ab73d9c92b3a1f16857cf'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_property/pcs.rb]/ensure: defined content as '{md5}ae9c7390951b251939219c5fcb1f392f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_rsc_defaults]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_rsc_defaults/crm.rb]/ensure: defined content as '{md5}1c32e5b6ae97253052fac10f648fca3f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_shadow]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_shadow/crm.rb]/ensure: defined content as '{md5}d518de999181776325e106f73b5f25da'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/cs_shadow/pcs.rb]/ensure: defined content as '{md5}fc5ebb51bd710b11baa208fb2a4d5fbd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/designate_api_paste_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/designate_api_paste_ini/ini_setting.rb]/ensure: defined content as '{md5}01f136ff6ce6961a9eda65577f8e8595'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/designate_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/designate_config/ini_setting.rb]/ensure: defined content as '{md5}2de2e13102a9ced50da67f58dcc13569'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/designate_rootwrap_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/designate_rootwrap_config/ini_setting.rb]/ensure: defined content as '{md5}c7ef39b5cb06629d6799e94a79a7e202'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/file_line]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/file_line/ruby.rb]/ensure: defined content as '{md5}21807f8ce44552e6ca69d322909189ab'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/firewall]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/firewall.rb]/ensure: defined content as '{md5}32d2f5e5dcc082986b82ef26a119038b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/firewall/ip6tables.rb]/ensure: defined content as '{md5}9565dec31930751daeeb1672c6da54c1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/firewall/iptables.rb]/ensure: defined content as '{md5}bf57c8a927930610d067e4cefd83799f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/firewallchain]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/firewallchain/iptables_chain.rb]/ensure: defined content as '{md5}98ac7c8a44014681a243da2391b09de6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance.rb]/ensure: defined content as '{md5}b72d9687811da764dbe35425b0af9c87'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_api_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_api_config/ini_setting.rb]/ensure: defined content as '{md5}dc3033e8581b16719fd1fd0ae4be9d85'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_api_paste_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_api_paste_ini/ini_setting.rb]/ensure: defined content as '{md5}4a3324b26fc33f7f6f14618f07592494'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_cache_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_cache_config/ini_setting.rb]/ensure: defined content as '{md5}df9c51dc9be3d8c49084acd7e82222d2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_image]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_image/openstack.rb]/ensure: defined content as '{md5}b222ab4897a0665b744a657517c50ea9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_registry_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_registry_config/ini_setting.rb]/ensure: defined content as '{md5}35c8bd21312f419692a12d82b81e3b0c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_registry_paste_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/glance_registry_paste_ini/ini_setting.rb]/ensure: defined content as '{md5}ad8e754955c7972a626457501a495eb0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/gnocchi.rb]/ensure: defined content as '{md5}046cd639f90a2437c976e3953a175cca'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/gnocchi_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/gnocchi_config/ini_setting.rb]/ensure: defined content as '{md5}14fe455e2c41b2598f44a13f94e15045'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/heat_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/heat_config/ini_setting.rb]/ensure: defined content as '{md5}0e5dfbfb5f8e0ac491c2f84276f0f030'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ini_setting]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ini_setting/ruby.rb]/ensure: defined content as '{md5}194c03eab6111e5eb6668ee847cdabcf'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ini_subsetting]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ini_subsetting/ruby.rb]/ensure: defined content as '{md5}aef090b9b38f80b9dc70abacd26365ab'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ironic.rb]/ensure: defined content as '{md5}c5435303c9a726f370bf265e3d810ba5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ironic_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ironic_config/ini_setting.rb]/ensure: defined content as '{md5}efcd855b681a4d02c385d3056735fe04'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ironic_inspector_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ironic_inspector_config/ini_setting.rb]/ensure: defined content as '{md5}f48ce38a8b68c4ef47855b5de359a7c6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone.rb]/ensure: defined content as '{md5}c2985006e706ab01f108f71438692723'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone/util.rb]/ensure: defined content as '{md5}f1618166fbc1df3e160e795d5734428d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_config/ini_setting.rb]/ensure: defined content as '{md5}8f8ab3b16fb5fbe54f132b834380ae3a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_domain]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_domain/openstack.rb]/ensure: defined content as '{md5}b14bfed7a9b07ab0fe5bfb91375b1b55'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_endpoint]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_endpoint/openstack.rb]/ensure: defined content as '{md5}220e8ca96e6f8f8539bba945a26b2f74'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_paste_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_paste_ini/ini_setting.rb]/ensure: defined content as '{md5}df7e671676104f090a07942f774844e3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_role]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_role/openstack.rb]/ensure: defined content as '{md5}71d44ad4123acd8cb8a756e19e6d5017'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_service]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_service/openstack.rb]/ensure: defined content as '{md5}23ec6a96dc485646f6e92f274cb761e5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_tenant]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_tenant/openstack.rb]/ensure: defined content as '{md5}e77c8b9857b94e73aedada09c0910cfa'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_user]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_user/openstack.rb]/ensure: defined content as '{md5}8ab377a09492751d3d5e173cc92a4f30'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_user_role]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/keystone_user_role/openstack.rb]/ensure: defined content as '{md5}ab43fc4810abe32dfe49c4eb92764dfd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/manila_api_paste_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/manila_api_paste_ini/ini_setting.rb]/ensure: defined content as '{md5}105a4e3616f12ab5c911a1bf042b86c6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/manila_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/manila_config/ini_setting.rb]/ensure: defined content as '{md5}5d3286bb9a59193813baf5106d5573d7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb.rb]/ensure: defined content as '{md5}0bd2f46ad211f7f7be42037c51fec84c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_conn_validator]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_conn_validator/tcp_port.rb]/ensure: defined content as '{md5}a073cd86586d376cd03dcdcf61ca149d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_database]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_database/mongodb.rb]/ensure: defined content as '{md5}1c30af6c450446279903665781b8a680'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_replset]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_replset/mongo.rb]/ensure: defined content as '{md5}e123152e8a999483f3cd3f8fcf24eb27'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_shard]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_shard/mongo.rb]/ensure: defined content as '{md5}b8b1d3dfb4623d86e9287d611fe281cd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_user]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mongodb_user/mongodb.rb]/ensure: defined content as '{md5}541c2f6fba36644c7a7fe8c8c18d202e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/murano.rb]/ensure: defined content as '{md5}3a7575ec42b41d905b81641e322f0e33'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/murano_application]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/murano_application/murano.rb]/ensure: defined content as '{md5}ba16833f0f628a4303dd941a5dbfc9c3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/murano_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/murano_config/ini_setting.rb]/ensure: defined content as '{md5}5509029cf2eee1a859ad5dafb0fbd1b8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/murano_paste_ini_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/murano_paste_ini_config/ini_setting.rb]/ensure: defined content as '{md5}38468f0d3ae61bf337b36818bb79fa0d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql.rb]/ensure: defined content as '{md5}881f4f76b084054f7299fe2de596e4c9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_database]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_database/mysql.rb]/ensure: defined content as '{md5}5cf9b8044df4ec72a726b5f781c84f8f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_grant]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_grant/mysql.rb]/ensure: defined content as '{md5}211b6fb362e340f60a8ce32006349730'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_plugin]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_plugin/mysql.rb]/ensure: defined content as '{md5}49128d2a9a547c4945735bfd75fd6d6c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_user]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/mysql_user/mysql.rb]/ensure: defined content as '{md5}3af9f573524a516e2ecd6d0830a92c62'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron.rb]/ensure: defined content as '{md5}5953428e7df4f545d25c9b7d631e186f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_agent_linuxbridge]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_agent_linuxbridge/ini_setting.rb]/ensure: defined content as '{md5}f99d30ee09d644c398368c3e4c3b0ec9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_agent_ovs]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_agent_ovs/ini_setting.rb]/ensure: defined content as '{md5}0ed2592ebba3191da6f8dc6bca845b67'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_api_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_api_config/ini_setting.rb]/ensure: defined content as '{md5}cef28fa1d8c11dada934da62e7e5d557'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_config/ini_setting.rb]/ensure: defined content as '{md5}44d71469e9bb340593514c13d14bbbce'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_dhcp_agent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_dhcp_agent_config/ini_setting.rb]/ensure: defined content as '{md5}6a389e01d6e5d9ad38ff62a0cf52789a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_fwaas_service_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_fwaas_service_config/ini_setting.rb]/ensure: defined content as '{md5}73fbfda463886ed5e98a39d68169824d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_l3_agent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_l3_agent_config/ini_setting.rb]/ensure: defined content as '{md5}048e886c5b6c5d2c381e7a3898dc5517'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_l3_ovs_bridge]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_l3_ovs_bridge/neutron.rb]/ensure: defined content as '{md5}ee4cf0682ed941fcc6729e42818578f1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_lbaas_agent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_lbaas_agent_config/ini_setting.rb]/ensure: defined content as '{md5}240813119988202bfb433be90d6246e4'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_metadata_agent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_metadata_agent_config/ini_setting.rb]/ensure: defined content as '{md5}6746963a133d8e40fed74e1801ce411a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_metering_agent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_metering_agent_config/ini_setting.rb]/ensure: defined content as '{md5}50257756b54fc14072cfe8394b5cb1c6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_network]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_network/neutron.rb]/ensure: defined content as '{md5}4539924b61951be8aa2bfe1a32c03d56'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco/ini_setting.rb]/ensure: defined content as '{md5}bec8f1169d744aa2716bd1f7f2225b6e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco_credentials]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco_credentials/ini_setting.rb]/ensure: defined content as '{md5}d8ff7115b1a1cf71f51d83da48857356'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco_db_conn]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco_db_conn/ini_setting.rb]/ensure: defined content as '{md5}02c21fffd54839af357060b192d56fec'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco_l2network]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_cisco_l2network/ini_setting.rb]/ensure: defined content as '{md5}b221a3aa97591ee831a653795771259a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_linuxbridge]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_linuxbridge/ini_setting.rb]/ensure: defined content as '{md5}9a80d939c2055a5938807441d07e0850'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_midonet]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_midonet/ini_setting.rb]/ensure: defined content as '{md5}0de14023988ac265641d5e46e49df281'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_ml2]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_ml2/ini_setting.rb]/ensure: defined content as '{md5}836e55ec48ffa97e3960bea1756db601'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_nuage]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_nuage/ini_setting.rb]/ensure: defined content as '{md5}97f02ff2bbe622f9e9295e21684952b3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_nvp]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_nvp/ini_setting.rb]/ensure: defined content as '{md5}149ac6c494a5b7e7e151ae276a404838'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_opencontrail]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_opencontrail/ini_setting.rb]/ensure: defined content as '{md5}e23b6c49f53f6451cafa344ee07642f2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_plumgrid]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_plumgrid/ini_setting.rb]/ensure: defined content as '{md5}0337e1ad9f7539cf568476ca8aad235d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_sriov]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plugin_sriov/ini_setting.rb]/ensure: defined content as '{md5}7c72475fa7354680410aa73feb5afd98'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plumlib_plumgrid]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_plumlib_plumgrid/ini_setting.rb]/ensure: defined content as '{md5}05bd7d930626133fbf3c5bff4ce95519'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_port]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_port/neutron.rb]/ensure: defined content as '{md5}cd1fa5f7ba6281131dace0d7f4afde9b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_router]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_router/neutron.rb]/ensure: defined content as '{md5}7c38492983527e9979173c58050b5a4e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_router_interface]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_router_interface/neutron.rb]/ensure: defined content as '{md5}4d49f586c59c38367bfe5e06fb3371fd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_sriov_agent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_sriov_agent_config/ini_setting.rb]/ensure: defined content as '{md5}8041175ceeea29eaaacaef65a2a4f832'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_subnet]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_subnet/neutron.rb]/ensure: defined content as '{md5}2fef42137f12967025f21938b915475f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_vpnaas_agent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/neutron_vpnaas_agent_config/ini_setting.rb]/ensure: defined content as '{md5}c47152df329fb3d0001a211c3d9f5e73'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova.rb]/ensure: defined content as '{md5}7b10823da81731b703b373d153298619'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_aggregate]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_aggregate/nova.rb]/ensure: defined content as '{md5}f113b9fd5ac5605cf34751c303ffec6f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_cells]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_cells/nova_manage.rb]/ensure: defined content as '{md5}3b8cfb156a35073ecd5d912e7c9b641b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_config/ini_setting.rb]/ensure: defined content as '{md5}94f0b4c0f9614e6c476584b3be94d42b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_floating]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_floating/nova_manage.rb]/ensure: defined content as '{md5}b83ee11085420f108f54e2804d1c2453'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_network]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_network/nova_manage.rb]/ensure: defined content as '{md5}92ce2c28149411d498932a4cfaf2f5d7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_paste_api_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/nova_paste_api_ini/ini_setting.rb]/ensure: defined content as '{md5}126127f9e096b1da9184c1dd617bd766'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/openstack]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/openstack.rb]/ensure: defined content as '{md5}8b5455832374e846824378cefbf86f88'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/openstack/auth.rb]/ensure: defined content as '{md5}41232594e87cedf3c9e820405d7a9610'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/openstack/credentials.rb]/ensure: defined content as '{md5}bbc2dd6e1fb1d8c5471514acfe2a25c9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/openstack_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/openstack_config/ini_setting.rb]/ensure: defined content as '{md5}3a964467a35ee8a235e0a86c18b3519b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/pacemaker.rb]/ensure: defined content as '{md5}0a133f4fa77777fd135b3abc72d233cf'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/pacemaker_common.rb]/ensure: defined content as '{md5}2d381cd41cbfc6f8d609ba04397c8b51'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/postgresql_conf]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/postgresql_conf/parsed.rb]/ensure: defined content as '{md5}8d8fdb4349d1ddfb79bc5539e7843e45'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/postgresql_psql]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/postgresql_psql/ruby.rb]/ensure: defined content as '{md5}589ada55e324bc6eea0003d62d8559d5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/postgresql_replication_slot]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/postgresql_replication_slot/ruby.rb]/ensure: defined content as '{md5}dcd93860861c530a12f1233334ea5f17'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/qpid_user]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/qpid_user/default.rb]/ensure: defined content as '{md5}0b0856ef1e1d92f1115a9d3dd833e475'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/qpid_user/saslpasswd2.rb]/ensure: defined content as '{md5}2375a47753db26b91bd317bb01663f4d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_binding]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_binding/rabbitmqadmin.rb]/ensure: defined content as '{md5}1b7bd0bd9ce3e0303f52178487170f42'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_erlang_cookie]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_erlang_cookie/ruby.rb]/ensure: defined content as '{md5}bd4660863a82e61dedd0460a0e84e3ad'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_exchange]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_exchange/rabbitmqadmin.rb]/ensure: defined content as '{md5}25ccace61413148ec092fc6b1020c31f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_parameter]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_parameter/rabbitmqctl.rb]/ensure: defined content as '{md5}e15317eadcc44b9fe5ca71b627b82128'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_plugin]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_plugin/rabbitmqplugins.rb]/ensure: defined content as '{md5}070c7f34822cae971bdb4ab859df174c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_policy]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_policy/rabbitmqctl.rb]/ensure: defined content as '{md5}ea39ffa45a616fcd755c8121338fcbcd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_queue]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_queue/rabbitmqadmin.rb]/ensure: defined content as '{md5}1c8044def501c07d0e611ffdfb25a907'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_user]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_user/rabbitmqctl.rb]/ensure: defined content as '{md5}eeddc61ef6c57e7225c818e494fc6e47'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_user_permissions]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_user_permissions/rabbitmqctl.rb]/ensure: defined content as '{md5}35c1224ef9f1191c61cc577d7b496395'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_vhost]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmq_vhost/rabbitmqctl.rb]/ensure: defined content as '{md5}3e4754621f03062a4620950134cb2042'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/rabbitmqctl.rb]/ensure: defined content as '{md5}88a0671d3a78c064dce3369520ad87a4'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ring_account_device]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ring_account_device/swift_ring_builder.rb]/ensure: defined content as '{md5}2a07483d2a537f0ec98bc5fcc1ae9f09'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ring_container_device]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ring_container_device/swift_ring_builder.rb]/ensure: defined content as '{md5}21cc35dc75f2e6e7217d089476af0821'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ring_object_device]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/ring_object_device/swift_ring_builder.rb]/ensure: defined content as '{md5}80511be8cbfd976f8eea0e055e532828'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/sahara_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/sahara_config/ini_setting.rb]/ensure: defined content as '{md5}071c4438ac20c957d3f54225b27161c0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/service]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/service/pacemaker.rb]/ensure: defined content as '{md5}1bd90885b75e6f7150ab3d1624f3a0b2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_account_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_account_config/ini_setting.rb]/ensure: defined content as '{md5}54e316e3f7bdeef1ff0ac5895e0b27ae'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_bench_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_bench_config/ini_setting.rb]/ensure: defined content as '{md5}6834bca5a819dacbc6b5de6403065291'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_config/ini_setting.rb]/ensure: defined content as '{md5}256850cb289d4fd188951cb6cf7ad9e6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_container_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_container_config/ini_setting.rb]/ensure: defined content as '{md5}3f1c400e2e7e61a39a6b4ccb00d9c17e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_dispersion_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_dispersion_config/ini_setting.rb]/ensure: defined content as '{md5}a7f0be8503fdbee0a08642ea0479fb5b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_object_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_object_config/ini_setting.rb]/ensure: defined content as '{md5}3773fa48472dd20cb6e25a0068e8ad9e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_object_expirer_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_object_expirer_config/ini_setting.rb]/ensure: defined content as '{md5}2490007e6d6fa517e1749ad7f8b10d56'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_proxy_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_proxy_config/ini_setting.rb]/ensure: defined content as '{md5}87ae28ec95196314ad7dd47861246100'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/swift_ring_builder.rb]/ensure: defined content as '{md5}4b96cc1e1f07d8ceb7c8364bacdc5517'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/sysctl]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/sysctl/parsed.rb]/ensure: defined content as '{md5}f1ad6c1cd610b6fe33fcd245759c09d1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/sysctl_runtime]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/sysctl_runtime/sysctl_runtime.rb]/ensure: defined content as '{md5}fd75e9c999cd6c34c7a04d8154bbc166'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tempest_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tempest_config/ini_setting.rb]/ensure: defined content as '{md5}831d6201cbdb55c58a0022df024108ac'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tempest_glance_id_setter]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tempest_glance_id_setter/ruby.rb]/ensure: defined content as '{md5}b34d9b05daa2467cb354560862b930f0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tempest_neutron_net_id_setter]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tempest_neutron_net_id_setter/ruby.rb]/ensure: defined content as '{md5}ad06677bac39c52eab7d8e3f9e7dbe2a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove.rb]/ensure: defined content as '{md5}7f8f41a43bec5b103231362c11a25305'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_api_paste_ini]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_api_paste_ini/ini_setting.rb]/ensure: defined content as '{md5}4b97483b5d5763c0e1f3916cbb9afc8d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_conductor_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_conductor_config/ini_setting.rb]/ensure: defined content as '{md5}e5702be214299f7c6a36cbdfdecbf04f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_config/ini_setting.rb]/ensure: defined content as '{md5}77a03fe67f9f24b9bb1f443a2dcd3f8b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_datastore]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_datastore/trove.rb]/ensure: defined content as '{md5}d9de2a1ad2c952a01f676ed87da02541'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_datastore_version]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_datastore_version/trove.rb]/ensure: defined content as '{md5}4ed736b98d9e7922394aced756f1fdb3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_guestagent_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_guestagent_config/ini_setting.rb]/ensure: defined content as '{md5}1dcd0e0ba2658e6913c1d5c465b5e25b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_taskmanager_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/trove_taskmanager_config/ini_setting.rb]/ensure: defined content as '{md5}0e24140a15bda0a020392357dd04a04b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tuskar.rb]/ensure: defined content as '{md5}d0ad5f4903930f9d18bb74ce1557e9f8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tuskar_config]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/tuskar_config/ini_setting.rb]/ensure: defined content as '{md5}ada1c39615248c5cf574042d5fe9738e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo.rb]/ensure: defined content as '{md5}dbd72590771291f1db23a41ac048ed9d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo/bzr.rb]/ensure: defined content as '{md5}9304caa8c45685d741248fb167c47842'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo/cvs.rb]/ensure: defined content as '{md5}0fed7f40f3de82c6490ac241cea46b3a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo/dummy.rb]/ensure: defined content as '{md5}4490fb75f044bd43855b2962b8f6e301'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo/git.rb]/ensure: defined content as '{md5}396b7947427d2fcdc9505c3d338dac0f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo/hg.rb]/ensure: defined content as '{md5}65a45f4382ed5874eeea3f2c3e0729f1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo/p4.rb]/ensure: defined content as '{md5}b324e3141913337d5592ebbcb2a7544e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vcsrepo/svn.rb]/ensure: defined content as '{md5}74ab5d60339e15cc04af0d059d0a7de6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vs_bridge]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vs_bridge/ovs.rb]/ensure: defined content as '{md5}93ca3499791b3572ff98ab34dc9d506e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vs_port]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vs_port/ovs.rb]/ensure: defined content as '{md5}f5eee11043a88b97c11fa1494c358d85'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vs_port/ovs_redhat.rb]/ensure: defined content as '{md5}669dcb6aa54c6e81e11b1300443852b9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/provider/vs_port/ovs_redhat_el6.rb]/ensure: defined content as '{md5}c4ad61ca179c920d47e7d6566476c526'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/a2mod.rb]/ensure: defined content as '{md5}9042ccc045bfeecca28bebb834114f05'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/anchor.rb]/ensure: defined content as '{md5}bbd36bb49c3b554f8602d8d3df366c0c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/aodh_config.rb]/ensure: defined content as '{md5}6e583312aa2db40da825bcc44e491e57'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/apt_key.rb]/ensure: defined content as '{md5}b167dc62db19a482a5b46abf3095904b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ceilometer_config.rb]/ensure: defined content as '{md5}ea3d946d67cfc55d1d2a43bbbf2b637d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cinder_api_paste_ini.rb]/ensure: defined content as '{md5}f98102da8d42ed5bb0f74c4582f8efa8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cinder_config.rb]/ensure: defined content as '{md5}91d094ce087b2d1e5a130d2a7882383b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_clone.rb]/ensure: defined content as '{md5}9d7df50d9c0dfd72122aefb960054c1e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_colocation.rb]/ensure: defined content as '{md5}1093301d4abcd8c29fac40a96c20584e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_commit.rb]/ensure: defined content as '{md5}861dddd7713a04d3b6f7039943fe49a4'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_group.rb]/ensure: defined content as '{md5}0506c11c4b2d48f05729f15c0cc86a2a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_location.rb]/ensure: defined content as '{md5}6f588868cfa1dcaaa4aa77854a3c7a42'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_order.rb]/ensure: defined content as '{md5}60581b040cbaf0caa20908176b1649ee'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_primitive.rb]/ensure: defined content as '{md5}d963d5759bcb2c50b85d75a3db9b2399'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_property.rb]/ensure: defined content as '{md5}abbeec201cf5261073beded19b0bf6a1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_rsc_defaults.rb]/ensure: defined content as '{md5}415a33a7d00deaf1e15692b210fa02b2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/cs_shadow.rb]/ensure: defined content as '{md5}e469eac8713deeb579bc47a00064db28'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/designate_api_paste_ini.rb]/ensure: defined content as '{md5}811a5153b2de7b2da1d1903c68315387'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/designate_config.rb]/ensure: defined content as '{md5}94089621c1f806b4486364bafc14d199'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/designate_rootwrap_config.rb]/ensure: defined content as '{md5}e2b5171dc3309f661a0e35faebe08a25'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/file_line.rb]/ensure: defined content as '{md5}56734a41d7d7e3bcb90b78cdb1cfac22'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/firewall.rb]/ensure: defined content as '{md5}edec9406e72ceddd35f814a281180cdc'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/firewallchain.rb]/ensure: defined content as '{md5}13095c792e72a2e53a040fb2025c9052'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/glance_api_config.rb]/ensure: defined content as '{md5}6777349b9150c5272a584aa0ebcadf30'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/glance_api_paste_ini.rb]/ensure: defined content as '{md5}e4c947d47d0b5fb029ea3140500c8f03'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/glance_cache_config.rb]/ensure: defined content as '{md5}410121ae825584431b3aa17efb19df42'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/glance_image.rb]/ensure: defined content as '{md5}4e108e3ed55fb06d79b31b608dcffb06'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/glance_registry_config.rb]/ensure: defined content as '{md5}a2500cc90c764d5b45e5710fdcf33a87'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/glance_registry_paste_ini.rb]/ensure: defined content as '{md5}face8c828756479ee0c44124b44d1ba8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/gnocchi_config.rb]/ensure: defined content as '{md5}39e8fdfa02c1a85d3345ee0f52384038'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/heat_config.rb]/ensure: defined content as '{md5}8d5a549cda9e6e102c7c8d1ef1a4f39b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ini_setting.rb]/ensure: defined content as '{md5}378f183dcf61d65e0a74cccfa1a49084'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ini_subsetting.rb]/ensure: defined content as '{md5}0e3bc0a4b63c0a8f4eefb57547f5c67f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ironic_config.rb]/ensure: defined content as '{md5}cbd25c3d0153576e6037eb85f8e36e6c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ironic_inspector_config.rb]/ensure: defined content as '{md5}f890b4fd4bb541c0bbf165a536914a1c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_config.rb]/ensure: defined content as '{md5}ea2f565a2082affacfb81fb600695f05'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_domain.rb]/ensure: defined content as '{md5}374f11ff9f624243beb430e2dac52f03'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_endpoint.rb]/ensure: defined content as '{md5}530c0679e80e7f616e35f5cb936acf59'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_paste_ini.rb]/ensure: defined content as '{md5}a89e20d117894f329b4030849d8d5920'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_role.rb]/ensure: defined content as '{md5}adf5dbf16fa9dd835a45e15888a23c70'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_service.rb]/ensure: defined content as '{md5}dc89e98fcd2b6f66572add02d715d60e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_tenant.rb]/ensure: defined content as '{md5}3054283e19d0a0506fc9dbd0a4ba7f63'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_user.rb]/ensure: defined content as '{md5}77d7132dd8e8a4527c17fd004643e1a6'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/keystone_user_role.rb]/ensure: defined content as '{md5}785477dc4eb2e19b1111cc9d9d69666a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/manila_api_paste_ini.rb]/ensure: defined content as '{md5}5203425a93c26f94280ed09901e25c13'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/manila_config.rb]/ensure: defined content as '{md5}cb57c288c177e3292f7a3f1fc18a2e98'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mongodb_conn_validator.rb]/ensure: defined content as '{md5}f4e2f61077f700d9035566468334019c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mongodb_database.rb]/ensure: defined content as '{md5}41364873f2dce1c40c7aaf9fbfe064b7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mongodb_replset.rb]/ensure: defined content as '{md5}6792d72e38eede3383f279bf1e6b574f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mongodb_shard.rb]/ensure: defined content as '{md5}3b19c7c87050942f4953d30f4cd37a0a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mongodb_user.rb]/ensure: defined content as '{md5}f8f56818c2b2dea84c762fed0d914a1f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/murano_application.rb]/ensure: defined content as '{md5}3ef60d9a772ddb9a2d8a2daf841a328c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/murano_config.rb]/ensure: defined content as '{md5}4fb66581358985266ca2443043c9b822'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/murano_paste_ini_config.rb]/ensure: defined content as '{md5}fd768d539c6e2762d9357a676c6f1237'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mysql_database.rb]/ensure: defined content as '{md5}438eafbfecc30605462a220d92cf9603'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mysql_grant.rb]/ensure: defined content as '{md5}2c04c9df671fc9c91d85cb2487d14ece'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mysql_plugin.rb]/ensure: defined content as '{md5}0a52cead6c9283c9aa14ea71bdfa80bd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/mysql_user.rb]/ensure: defined content as '{md5}e8dc61e4d81244d58a71b0d8aa01ac76'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_agent_linuxbridge.rb]/ensure: defined content as '{md5}1113172985a4852800bbcb9a06c4c8a2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_agent_ovs.rb]/ensure: defined content as '{md5}eb241768f2cceaacc6c129a5397f719a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_api_config.rb]/ensure: defined content as '{md5}05ac3c000284ab396d4cc4c64ee18678'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_config.rb]/ensure: defined content as '{md5}047c5e99d0c1e362bca6c5d962626b27'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_dhcp_agent_config.rb]/ensure: defined content as '{md5}543cc5f04888c6537f2e6561f93106d9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_fwaas_service_config.rb]/ensure: defined content as '{md5}123610bf7f966ad42650db3de8537156'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_l3_agent_config.rb]/ensure: defined content as '{md5}2e44d681f5b42ed44cd2eb8acb5349ee'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_l3_ovs_bridge.rb]/ensure: defined content as '{md5}058d18a7e7cc88d446aa07cf25a657fe'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_lbaas_agent_config.rb]/ensure: defined content as '{md5}83ae54d98812c46813bfcdec1dff4f73'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_metadata_agent_config.rb]/ensure: defined content as '{md5}3819940e32af4cfe80d51816a4a7c46b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_metering_agent_config.rb]/ensure: defined content as '{md5}16741e9c7a00ae2e8d92990fe82a721b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_network.rb]/ensure: defined content as '{md5}1467a99e0900ba24e706bf88e57e8378'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_cisco.rb]/ensure: defined content as '{md5}ac83ef1e2acb321a396f0d18a6725e2d'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_cisco_credentials.rb]/ensure: defined content as '{md5}9d8750720f47f9ae0bc1e47be58643d7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_cisco_db_conn.rb]/ensure: defined content as '{md5}1631c95476a3c40d125b9082985620d3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_cisco_l2network.rb]/ensure: defined content as '{md5}0ef3fda0471dc5ab156f5ff6bf7badd3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_linuxbridge.rb]/ensure: defined content as '{md5}92795ee36446fbe8911be5933386168e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_midonet.rb]/ensure: defined content as '{md5}9056ceb5b7f2abd592aa8426e423bef1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_ml2.rb]/ensure: defined content as '{md5}d6ed2554fa8a676eff1c56efb3cfdedc'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_nuage.rb]/ensure: defined content as '{md5}494a4b9ab19c30e4c15d5fbc899ea395'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_nvp.rb]/ensure: defined content as '{md5}d3b75ec6e30b5efe1177fe11bcd7c69c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_opencontrail.rb]/ensure: defined content as '{md5}0a47f2e0eeb780059f4bd71b235b4d66'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_plumgrid.rb]/ensure: defined content as '{md5}4a106b7b89fcd9093465e2f9b2587c39'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plugin_sriov.rb]/ensure: defined content as '{md5}9b415659a11d237bba0a5ce906c79e1c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_plumlib_plumgrid.rb]/ensure: defined content as '{md5}9f5d601e6db67b23e73e8af05d940803'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_port.rb]/ensure: defined content as '{md5}0d702eedd1cd17a97e1d1d85db568658'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_router.rb]/ensure: defined content as '{md5}cbfbf082bf43612d9c896547dea78988'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_router_interface.rb]/ensure: defined content as '{md5}84c220a451fe665fc65fae11db239c28'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_sriov_agent_config.rb]/ensure: defined content as '{md5}281a8526aca73f44fb049d7628cf56a3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_subnet.rb]/ensure: defined content as '{md5}6d2501a19b55c3308091d83a8d42feb2'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/neutron_vpnaas_agent_config.rb]/ensure: defined content as '{md5}2b36307ed8fdddd344751ffbfc57b611'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/nova_aggregate.rb]/ensure: defined content as '{md5}e6b557bb076b98dce24bd0f3394c71b5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/nova_cells.rb]/ensure: defined content as '{md5}b872e07135cde88cec18905ad957fb94'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/nova_config.rb]/ensure: defined content as '{md5}5cb6d28df8ff415038c764d4bcbca8cb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/nova_floating.rb]/ensure: defined content as '{md5}e8eca1c8436bda196b855bba1d215e03'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/nova_network.rb]/ensure: defined content as '{md5}c4a1c371351cee439b94543357486f8a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/nova_paste_api_ini.rb]/ensure: defined content as '{md5}f3f58b4d55e14eea691a2752ed4ce3c9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/openstack_config.rb]/ensure: defined content as '{md5}ca55b6dea77af3c37e0c5cf28304b534'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/postgresql_conf.rb]/ensure: defined content as '{md5}95c73ca169db02aa1128ae3baa2f7399'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/postgresql_psql.rb]/ensure: defined content as '{md5}04af46b2db65175cb024772f994c7bb1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/postgresql_replication_slot.rb]/ensure: defined content as '{md5}cd9362cdb569945ca42986d005e88bcb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/qpid_user.rb]/ensure: defined content as '{md5}f104d60fc6f5f3a9f9d3ac26f11e239b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_binding.rb]/ensure: defined content as '{md5}5c19f5f98247d4ee5286e16242a53441'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_erlang_cookie.rb]/ensure: defined content as '{md5}ad082a425169634391888fcd9a2131bb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_exchange.rb]/ensure: defined content as '{md5}71b30bd4bbc491efdac8b0a9a7f0d665'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_parameter.rb]/ensure: defined content as '{md5}2c03dfe18ecebbceb7416bb0dcd4d30c'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_plugin.rb]/ensure: defined content as '{md5}12d39d86be9b643d30175eafa5265dfa'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_policy.rb]/ensure: defined content as '{md5}273a20acd188f9a77ad99618908ed08a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_queue.rb]/ensure: defined content as '{md5}653a5e3eaa69c6d0d29f477c40362c13'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_user.rb]/ensure: defined content as '{md5}75fd2570b08db656f43c60b57f271440'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_user_permissions.rb]/ensure: defined content as '{md5}192afa7c45f1f47fd0b1cc41b7da8a93'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/rabbitmq_vhost.rb]/ensure: defined content as '{md5}ff6fc35bb9c22b1c493b84adf6bb3167'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ring_account_device.rb]/ensure: defined content as '{md5}c9b08e5fd2c059324282fe5ea25aa589'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ring_container_device.rb]/ensure: defined content as '{md5}c4cbb19683ba4404a785f05ff53d19c7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/ring_object_device.rb]/ensure: defined content as '{md5}30d987e9ba7fd057c5b1489df1612d71'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/sahara_config.rb]/ensure: defined content as '{md5}1a2695cfc1908ad137fc2bec6e8afeb7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_account_config.rb]/ensure: defined content as '{md5}a198a66854c9744488cc31d7491bc6fa'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_bench_config.rb]/ensure: defined content as '{md5}5b7a86d3870fc0e1ea2eb6a9c8a1550a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_config.rb]/ensure: defined content as '{md5}e9520932feb996c369b797735a95b205'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_container_config.rb]/ensure: defined content as '{md5}a5d89b8c7803c9014d180b984f042382'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_dispersion_config.rb]/ensure: defined content as '{md5}07ed35500789eb0bf4d2636c84d0c1d9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_object_config.rb]/ensure: defined content as '{md5}8dd9c4dbbddaabad1aedddf3d5b1f2b0'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_object_expirer_config.rb]/ensure: defined content as '{md5}e898602d8090693c11266b168e224f6b'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/swift_proxy_config.rb]/ensure: defined content as '{md5}3d91a85f4095482837004d3b35823b42'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/sysctl.rb]/ensure: defined content as '{md5}e922bf4d4526967e95f6cec7d55f643a'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/sysctl_runtime.rb]/ensure: defined content as '{md5}0b6f7cc9b83b2ce2fbac6b6c23b063d1'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/tempest_config.rb]/ensure: defined content as '{md5}df0c5f2314689c4b555278c612a93b98'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/tempest_glance_id_setter.rb]/ensure: defined content as '{md5}14e1db06ab7866af84404392a9e811b3'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/tempest_neutron_net_id_setter.rb]/ensure: defined content as '{md5}441112ace647aae8c1f623f6411aeabe'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/trove_api_paste_ini.rb]/ensure: defined content as '{md5}420012f816dece8401a3d7788442aaeb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/trove_conductor_config.rb]/ensure: defined content as '{md5}ebe9b11cfacf75fbc8611ebb32e9a080'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/trove_config.rb]/ensure: defined content as '{md5}c99e9f531fba7701f7549912e95f9dd8'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/trove_datastore.rb]/ensure: defined content as '{md5}bddf932c3b3c04ca0b6bdabd25b3ddbb'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/trove_datastore_version.rb]/ensure: defined content as '{md5}2d51c5fb0717f9a1812a2368940a12fc'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/trove_guestagent_config.rb]/ensure: defined content as '{md5}ac2e4ea770869df5cc1138f1cd13f0d9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/trove_taskmanager_config.rb]/ensure: defined content as '{md5}20b7560d5cf5248d710dfa6aac91d498'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/tuskar_config.rb]/ensure: defined content as '{md5}b3c5ea7940bfc88c54618bc4d29943e9'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/vcsrepo.rb]/ensure: defined content as '{md5}76c6a584aac7333ed336e300dcb80aad'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/vs_bridge.rb]/ensure: defined content as '{md5}20c831445148365dc964c26a1b6a7bba'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/type/vs_port.rb]/ensure: defined content as '{md5}16fe96502fe7aa6fbb61d54c210043ee'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/external_iterator.rb]/ensure: defined content as '{md5}69ad1eb930ca6d8d6b6faea343b4a22e'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/firewall.rb]/ensure: defined content as '{md5}7bcbadf9890c044a49cc58b535352269'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/ini_file]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/ini_file.rb]/ensure: defined content as '{md5}d83db0406006cff7113891ec163e2a43'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/ini_file/section.rb]/ensure: defined content as '{md5}77757399ed9b9ce352ddcc8b8f9273c4'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/ipcidr.rb]/ensure: defined content as '{md5}e1160dfd6e73fc5ef2bb8abc291f6fd5'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/mongodb_validator.rb]/ensure: defined content as '{md5}07e7c7448f07c67e925dee01ebf011c7'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet/util/setting_value.rb]/ensure: defined content as '{md5}e8c380aa3e41e0c6d11f8110ee0344bd'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/apt_key]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/apt_key/patch_openuri.rb]/ensure: defined content as '{md5}951bad007a3b5db035be069c1d1c9c09'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/composite_namevar]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/composite_namevar.rb]/ensure: defined content as '{md5}2d7e05bc9cf81325d57bb88bcd82103f'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/composite_namevar/helpers]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/composite_namevar/helpers.rb]/ensure: defined content as '{md5}e1ce919c704336f0fc671376c923fc99'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/composite_namevar/helpers/utilities.rb]/ensure: defined content as '{md5}d9270d6180aeffb0d03c6dc1b5ebc785'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/type]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/type.rb]/ensure: defined content as '{md5}61822186f20289cb2ba07e9e20e21475'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/type/default_domain.rb]/ensure: defined content as '{md5}19643ed8094d02d0a0816c5ed2e0db38'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/type/read_only.rb]/ensure: defined content as '{md5}12fad8c24e2a86a7d55c1296a1c6a956'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppet_x/keystone/type/required.rb]/ensure: defined content as '{md5}bed18374d8255b1d6ad4c6369d121707'[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppetx]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppetx/redhat]/ensure: created[0m
+[mNotice: /File[/opt/puppetlabs/puppet/cache/lib/puppetx/redhat/ifcfg.rb]/ensure: defined content as '{md5}fee5e9c48f51e9a8331cd9f90ce7a3c4'[0m
+[0;32mInfo: Loading facts[0m
+[0;32mInfo: Caching catalog for puppet-trace-compute-0.openstacklocal[0m
+[0;32mInfo: Applying configuration version '1492629314'[0m
+[0;32mInfo: Stage[setup]: Starting to evaluate the resource[0m
+[0;32mInfo: Stage[setup]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Stage[setup]: Starting to evaluate the resource[0m
+[0;32mInfo: Stage[setup]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Stage[main]: Starting to evaluate the resource[0m
+[0;32mInfo: Stage[main]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Settings]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Settings]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Settings]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Settings]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Main]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Main]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Main]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Main]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Scenario::Openstack::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Openstack::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Scenario::Openstack::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Openstack::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Scenario::Openstack::Compute]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Openstack::Compute]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Xp]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Xp]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Xp]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Xp]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Xp::Locales]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Xp::Locales]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Xp::Locales]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Xp::Locales]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Apt::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Apt::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Apt::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Apt::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Apt]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Apt]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Apt::Setting[conf-update-stamp]: Starting to evaluate the resource[0m
+[0;32mInfo: Apt::Setting[conf-update-stamp]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Apt/File[sources.list]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Apt/File[sources.list]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Apt/File[sources.list.d]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Apt/File[sources.list.d]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Apt/File[preferences]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Apt/File[preferences]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Apt/File[preferences]: Scheduling refresh of Class[Apt::Update][0m
+[0;32mInfo: /Stage[main]/Apt/File[preferences]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Apt/File[preferences.d]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Apt/File[preferences.d]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Ubuntu]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Ubuntu]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Apt::Source[ubuntu-cloud-archive]: Starting to evaluate the resource[0m
+[0;32mInfo: Apt::Source[ubuntu-cloud-archive]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Scenario::Common::Nova]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Common::Nova]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Scenario::Common::Nova]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Common::Nova]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Mysql::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Mysql::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Mysql::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Mysql::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Mysql::Bindings]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Mysql::Bindings]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Mysql::Bindings]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Mysql::Bindings]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Mysql::Bindings::Python]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Mysql::Bindings::Python]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Logging]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Logging]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Utilities]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Utilities]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/File[guestfs.seed]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Utilities/File[guestfs.seed]/ensure: defined content as '{md5}ed7a959f55733e028e8b72b96a3eedd8'[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/File[guestfs.seed]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Anchor[nova-start]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Anchor[nova-start]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Network::Neutron]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Network::Neutron]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Compute]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Compute]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Vncproxy::Common]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Vncproxy::Common]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Vncproxy::Common]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Vncproxy::Common]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Nova::Generic_service[compute]: Starting to evaluate the resource[0m
+[0;32mInfo: Nova::Generic_service[compute]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Compute::Libvirt]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Compute::Libvirt]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Migration::Libvirt]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Migration::Libvirt]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Scenario::Common::Neutron]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Common::Neutron]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Scenario::Common::Neutron]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Common::Neutron]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Neutron]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Neutron::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Neutron::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Neutron::Plugins::Ml2]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron::Plugins::Ml2]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vxlan]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vxlan]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[flat]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[flat]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vlan]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vlan]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Mech_driver[openvswitch]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Mech_driver[openvswitch]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Mech_driver[openvswitch]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Mech_driver[openvswitch]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Vswitch::Ovs]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Vswitch::Ovs]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Vswitch::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Vswitch::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Vswitch::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Vswitch::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Locales::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Locales::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Locales::Params]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Locales::Params]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Locales]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Locales]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Apt/Apt::Setting[conf-update-stamp]/File[/etc/apt/apt.conf.d/15update-stamp]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Apt/Apt::Setting[conf-update-stamp]/File[/etc/apt/apt.conf.d/15update-stamp]/content: 
+--- /etc/apt/apt.conf.d/15update-stamp	2011-08-22 11:58:02.000000000 +0000
++++ /tmp/puppet-file20170419-3585-ug32ui	2017-04-19 19:15:16.448018672 +0000
+@@ -1 +1,2 @@
++// This file is managed by Puppet. DO NOT EDIT.
+ APT::Update::Post-Invoke-Success {"touch /var/lib/apt/periodic/update-success-stamp 2>/dev/null || true";};
+[0m
+[0;32mInfo: Computing checksum on file /etc/apt/apt.conf.d/15update-stamp[0m
+[0;32mInfo: /Stage[main]/Apt/Apt::Setting[conf-update-stamp]/File[/etc/apt/apt.conf.d/15update-stamp]: Filebucketed /etc/apt/apt.conf.d/15update-stamp to puppet with sum b9de0ac9e2c9854b1bb213e362dc4e41[0m
+[mNotice: /Stage[main]/Apt/Apt::Setting[conf-update-stamp]/File[/etc/apt/apt.conf.d/15update-stamp]/content: content changed '{md5}b9de0ac9e2c9854b1bb213e362dc4e41' to '{md5}0962d70c4ec78bbfa6f3544ae0c41974'[0m
+[0;32mInfo: /Stage[main]/Apt/Apt::Setting[conf-update-stamp]/File[/etc/apt/apt.conf.d/15update-stamp]: Scheduling refresh of Class[Apt::Update][0m
+[0;32mInfo: /Stage[main]/Apt/Apt::Setting[conf-update-stamp]/File[/etc/apt/apt.conf.d/15update-stamp]: Evaluated in 0.08 seconds[0m
+[0;32mInfo: Apt::Setting[conf-update-stamp]: Starting to evaluate the resource[0m
+[0;32mInfo: Apt::Setting[conf-update-stamp]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Apt]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Apt]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Apt::Setting[list-ubuntu-cloud-archive]: Starting to evaluate the resource[0m
+[0;32mInfo: Apt::Setting[list-ubuntu-cloud-archive]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Apt::Source[ubuntu-cloud-archive]/Apt::Setting[list-ubuntu-cloud-archive]/File[/etc/apt/sources.list.d/ubuntu-cloud-archive.list]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Apt::Source[ubuntu-cloud-archive]/Apt::Setting[list-ubuntu-cloud-archive]/File[/etc/apt/sources.list.d/ubuntu-cloud-archive.list]/ensure: defined content as '{md5}43860cd30a300ff2fd311cfb053ae304'[0m
+[0;32mInfo: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Apt::Source[ubuntu-cloud-archive]/Apt::Setting[list-ubuntu-cloud-archive]/File[/etc/apt/sources.list.d/ubuntu-cloud-archive.list]: Scheduling refresh of Exec[installing ubuntu-cloud-keyring][0m
+[0;32mInfo: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Apt::Source[ubuntu-cloud-archive]/Apt::Setting[list-ubuntu-cloud-archive]/File[/etc/apt/sources.list.d/ubuntu-cloud-archive.list]: Scheduling refresh of Class[Apt::Update][0m
+[0;32mInfo: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Apt::Source[ubuntu-cloud-archive]/Apt::Setting[list-ubuntu-cloud-archive]/File[/etc/apt/sources.list.d/ubuntu-cloud-archive.list]: Evaluated in 0.02 seconds[0m
+[0;32mInfo: Class[Apt::Update]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Apt::Update]: Scheduling refresh of Exec[apt_update][0m
+[0;32mInfo: Class[Apt::Update]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Exec[installing ubuntu-cloud-keyring]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Exec[installing ubuntu-cloud-keyring]: Triggered 'refresh' from 1 events[0m
+[0;32mInfo: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Exec[installing ubuntu-cloud-keyring]: Scheduling refresh of Exec[apt_update][0m
+[0;32mInfo: /Stage[main]/Openstack_extras::Repo::Debian::Ubuntu/Exec[installing ubuntu-cloud-keyring]: Evaluated in 3.48 seconds[0m
+[0;32mInfo: /Stage[main]/Apt::Update/Exec[apt_update]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Apt::Update/Exec[apt_update]: Triggered 'refresh' from 2 events[0m
+[0;32mInfo: /Stage[main]/Apt::Update/Exec[apt_update]: Evaluated in 6.33 seconds[0m
+[0;32mInfo: Class[Apt::Update]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Apt::Update]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Mysql::Bindings::Python/Package[python-mysqldb]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Mysql::Bindings::Python/Package[python-mysqldb]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Mysql::Bindings::Python/Package[python-mysqldb]: Evaluated in 4.01 seconds[0m
+[0;32mInfo: Class[Mysql::Bindings::Python]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Mysql::Bindings::Python]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Db]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Db]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[unzip]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[unzip]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[screen]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[screen]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[parted]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[parted]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[curl]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[curl]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[euca2ools]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Utilities/Package[euca2ools]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[euca2ools]: Evaluated in 4.08 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[libguestfs-tools]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Utilities/Package[libguestfs-tools]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Utilities]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Utilities]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Package[python-nova]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Package[python-nova]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Package[python-nova]: Evaluated in 55.51 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Package[nova-common]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Package[nova-common]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Package[nova-common]: Evaluated in 50.08 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/connection]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Db/Nova_config[database/connection]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/connection]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/connection]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/idle_timeout]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Db/Nova_config[database/idle_timeout]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/idle_timeout]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/idle_timeout]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/min_pool_size]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Db/Nova_config[database/min_pool_size]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/min_pool_size]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/min_pool_size]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_retries]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Db/Nova_config[database/max_retries]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_retries]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_retries]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/retry_interval]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Db/Nova_config[database/retry_interval]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/retry_interval]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/retry_interval]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_pool_size]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Db/Nova_config[database/max_pool_size]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_pool_size]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_pool_size]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_overflow]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Db/Nova_config[database/max_overflow]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_overflow]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/max_overflow]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/slave_connection]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Db/Nova_config[database/slave_connection]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Db]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Db]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/debug]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/debug]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/debug]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/debug]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/verbose]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/verbose]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_stderr]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_stderr]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_stderr]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_stderr]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_syslog]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_syslog]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_syslog]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/use_syslog]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_dir]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_dir]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_dir]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_dir]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/syslog_log_facility]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/syslog_log_facility]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/syslog_log_facility]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/syslog_log_facility]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_context_format_string]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_context_format_string]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_default_format_string]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_default_format_string]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_debug_format_suffix]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_debug_format_suffix]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_exception_prefix]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/logging_exception_prefix]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_config_append]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_config_append]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/default_log_levels]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/default_log_levels]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/publish_errors]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/publish_errors]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/fatal_deprecations]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/fatal_deprecations]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/instance_format]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/instance_format]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/instance_uuid_format]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/instance_uuid_format]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_date_format]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Logging/Nova_config[DEFAULT/log_date_format]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Logging]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Logging]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/File[/etc/nova/nova.conf]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/File[/etc/nova/nova.conf]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/image_service]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/image_service]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/image_service]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/image_service]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[glance/api_servers]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[glance/api_servers]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[glance/api_servers]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[glance/api_servers]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/auth_strategy]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/auth_strategy]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/auth_strategy]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/auth_strategy]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/memcached_servers]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/memcached_servers]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_password]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_password]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_password]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_password]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_userid]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_userid]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_userid]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_userid]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_virtual_host]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_virtual_host]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_virtual_host]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_virtual_host]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_use_ssl]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_use_ssl]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_use_ssl]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_use_ssl]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_timeout_threshold]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_timeout_threshold]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_timeout_threshold]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_timeout_threshold]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_rate]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_rate]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_rate]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/heartbeat_rate]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_reconnect_delay]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_reconnect_delay]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_reconnect_delay]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_reconnect_delay]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/amqp_durable_queues]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/amqp_durable_queues]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/amqp_durable_queues]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/amqp_durable_queues]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_ca_certs]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_ca_certs]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_certfile]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_certfile]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_keyfile]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_keyfile]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_version]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/kombu_ssl_version]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_host]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_host]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_host]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_host]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_port]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_port]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_port]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_port]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_hosts]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_hosts]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_hosts]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_hosts]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_ha_queues]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_ha_queues]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_ha_queues]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[oslo_messaging_rabbit/rabbit_ha_queues]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/enabled_ssl_apis]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/enabled_ssl_apis]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/ssl_cert_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/ssl_cert_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/ssl_key_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/ssl_key_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/ssl_ca_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/ssl_ca_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notification_driver]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notification_driver]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[cinder/catalog_info]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[cinder/catalog_info]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[cinder/catalog_info]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[cinder/catalog_info]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/rpc_backend]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/rpc_backend]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/rpc_backend]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/rpc_backend]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notification_topics]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/notification_topics]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notification_topics]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notification_topics]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notify_api_faults]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/notify_api_faults]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notify_api_faults]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notify_api_faults]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/state_path]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/state_path]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/lock_path]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/lock_path]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/service_down_time]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/service_down_time]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/service_down_time]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/service_down_time]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/rootwrap_config]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/rootwrap_config]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/rootwrap_config]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/rootwrap_config]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/report_interval]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Nova_config[DEFAULT/report_interval]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/report_interval]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/report_interval]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notify_on_state_change]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/notify_on_state_change]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[cinder/os_region_name]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[cinder/os_region_name]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/cells]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/cells]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/cert]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/cert]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/compute]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/compute]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/conductor]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/conductor]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/console]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/console]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/consoleauth]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/consoleauth]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/intercell]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/intercell]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/network]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/network]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/scheduler]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[upgrade_levels/scheduler]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/os_region_name]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Nova_config[DEFAULT/os_region_name]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/dhcp_domain]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/dhcp_domain]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/dhcp_domain]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/dhcp_domain]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/firewall_driver]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/firewall_driver]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/firewall_driver]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/firewall_driver]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/network_api_class]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/network_api_class]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/network_api_class]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/network_api_class]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/security_group_api]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/security_group_api]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/security_group_api]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/security_group_api]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_is_fatal]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_is_fatal]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_is_fatal]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_is_fatal]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_timeout]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_timeout]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_timeout]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[DEFAULT/vif_plugging_timeout]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/auth_strategy]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/auth_strategy]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/auth_strategy]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/auth_strategy]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/url]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/url]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/url]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/url]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/timeout]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/timeout]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/timeout]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/timeout]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_tenant_name]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_tenant_name]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_tenant_name]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_tenant_name]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/default_tenant_id]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/default_tenant_id]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/default_tenant_id]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/default_tenant_id]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/region_name]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/region_name]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/region_name]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/region_name]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_username]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_username]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_username]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_username]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_password]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_password]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_password]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_password]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_auth_url]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_auth_url]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_auth_url]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/admin_auth_url]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/ovs_bridge]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/ovs_bridge]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/ovs_bridge]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/ovs_bridge]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/extension_sync_interval]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/extension_sync_interval]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/extension_sync_interval]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/extension_sync_interval]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/ca_certificates_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Network::Neutron/Nova_config[neutron/ca_certificates_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Network::Neutron]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Network::Neutron]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/reserved_host_memory_mb]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/reserved_host_memory_mb]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/reserved_host_memory_mb]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/reserved_host_memory_mb]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/compute_manager]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/compute_manager]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/compute_manager]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/compute_manager]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/heal_instance_info_cache_interval]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/heal_instance_info_cache_interval]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/heal_instance_info_cache_interval]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/heal_instance_info_cache_interval]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/allow_resize_to_same_host]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/allow_resize_to_same_host]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/allow_resize_to_same_host]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/allow_resize_to_same_host]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_enabled]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_enabled]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_enabled]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_enabled]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vncserver_proxyclient_address]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vncserver_proxyclient_address]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vncserver_proxyclient_address]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vncserver_proxyclient_address]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_keymap]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_keymap]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_keymap]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/vnc_keymap]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/force_config_drive]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/force_config_drive]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/network_device_mtu]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/network_device_mtu]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/instance_usage_audit]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/instance_usage_audit]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/instance_usage_audit_period]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/instance_usage_audit_period]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Package[pm-utils]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Package[pm-utils]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Package[pm-utils]: Evaluated in 2.42 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/force_raw_images]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/force_raw_images]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/force_raw_images]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/force_raw_images]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/default_availability_zone]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/default_availability_zone]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/default_availability_zone]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/default_availability_zone]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/internal_service_availability_zone]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/internal_service_availability_zone]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/internal_service_availability_zone]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova_config[DEFAULT/internal_service_availability_zone]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Package[nova-compute-kvm]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Package[nova-compute-kvm]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Package[nova-compute-kvm]: Evaluated in 34.41 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Package[libvirt]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Package[libvirt]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tls]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tls]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tls]: Scheduling refresh of Service[libvirt][0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tls]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tcp]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tcp]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tcp]: Scheduling refresh of Service[libvirt][0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf listen_tcp]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf auth_tcp]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf auth_tcp]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf auth_tcp]: Scheduling refresh of Service[libvirt][0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/libvirt/libvirtd.conf auth_tcp]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/default/libvirt-bin libvirtd opts]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/default/libvirt-bin libvirtd opts]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/default/libvirt-bin libvirtd opts]: Scheduling refresh of Service[libvirt][0m
+[0;32mInfo: /Stage[main]/Nova::Migration::Libvirt/File_line[/etc/default/libvirt-bin libvirtd opts]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Migration::Libvirt]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Migration::Libvirt]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Service[libvirt]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Service[libvirt]: Triggered 'refresh' from 4 events[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Service[libvirt]: Evaluated in 2.05 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/compute_driver]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/compute_driver]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/compute_driver]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/compute_driver]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/vncserver_listen]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/vncserver_listen]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/vncserver_listen]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/vncserver_listen]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/virt_type]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/virt_type]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/virt_type]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/virt_type]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/cpu_mode]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/cpu_mode]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/cpu_mode]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/cpu_mode]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_password]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_password]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_password]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_password]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_key]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_key]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_key]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_key]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_partition]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_partition]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_partition]: Scheduling refresh of Exec[post-nova_config][0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/inject_partition]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/cpu_model]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/cpu_model]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/disk_cachemodes]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/disk_cachemodes]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/remove_unused_kernels]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/remove_unused_kernels]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/remove_unused_resized_minimum_age_seconds]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[libvirt/remove_unused_resized_minimum_age_seconds]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/remove_unused_base_images]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/remove_unused_base_images]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/remove_unused_original_minimum_age_seconds]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute::Libvirt/Nova_config[DEFAULT/remove_unused_original_minimum_age_seconds]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Exec[post-nova_config]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova/Exec[post-nova_config]: Triggered 'refresh' from 68 events[0m
+[0;32mInfo: /Stage[main]/Nova/Exec[post-nova_config]: Scheduling refresh of Service[nova-compute][0m
+[0;32mInfo: /Stage[main]/Nova/Exec[post-nova_config]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: Class[Nova::Compute::Libvirt]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Compute::Libvirt]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Package[neutron]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Package[neutron]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Package[neutron]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron/Package[neutron]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron/Package[neutron]: Evaluated in 14.81 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/verbose]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/verbose]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/verbose]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/debug]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/debug]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/debug]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_stderr]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_stderr]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_stderr]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/bind_host]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/bind_host]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/bind_host]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/bind_port]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/bind_port]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/bind_port]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/auth_strategy]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/auth_strategy]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/auth_strategy]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/core_plugin]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/core_plugin]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/base_mac]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/base_mac]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/base_mac]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/mac_generation_retries]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/mac_generation_retries]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/mac_generation_retries]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_lease_duration]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_lease_duration]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_lease_duration]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_agents_per_network]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_agents_per_network]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_agents_per_network]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_agent_notification]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_agent_notification]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/dhcp_agent_notification]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/advertise_mtu]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/advertise_mtu]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/advertise_mtu]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_bulk]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_bulk]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_bulk]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_pagination]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_pagination]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_pagination]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_sorting]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_sorting]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_sorting]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_overlapping_ips]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_overlapping_ips]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/allow_overlapping_ips]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/control_exchange]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/control_exchange]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/control_exchange]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/rpc_backend]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/rpc_backend]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/rpc_backend]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/api_extensions_path]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/api_extensions_path]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/state_path]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/state_path]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/state_path]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/lock_path]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/lock_path]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/lock_path]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/rpc_response_timeout]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/rpc_response_timeout]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/rpc_response_timeout]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[agent/root_helper]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[agent/root_helper]/value: value changed 'sudo /usr/bin/neutron-rootwrap /etc/neutron/rootwrap.conf' to 'sudo neutron-rootwrap /etc/neutron/rootwrap.conf'[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[agent/root_helper]: Evaluated in 0.03 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[agent/report_interval]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[agent/report_interval]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[agent/report_interval]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/log_dir]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/log_dir]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/log_dir]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/log_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/log_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/network_device_mtu]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/network_device_mtu]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/service_plugins]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/service_plugins]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/service_plugins]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/memcached_servers]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/memcached_servers]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_host]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_host]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_host]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_port]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_port]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_port]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_hosts]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_hosts]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_hosts]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_ha_queues]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_ha_queues]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_ha_queues]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_userid]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_userid]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_userid]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_password]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_password]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_password]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_virtual_host]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_virtual_host]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_virtual_host]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/heartbeat_timeout_threshold]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/heartbeat_timeout_threshold]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/heartbeat_timeout_threshold]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/heartbeat_rate]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/heartbeat_rate]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/heartbeat_rate]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_use_ssl]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_use_ssl]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/rabbit_use_ssl]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_reconnect_delay]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_reconnect_delay]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_reconnect_delay]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_ca_certs]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_ca_certs]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_certfile]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_certfile]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_keyfile]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_keyfile]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_version]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[oslo_messaging_rabbit/kombu_ssl_version]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_ssl]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_ssl]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_ssl]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/ssl_cert_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/ssl_cert_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/ssl_key_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/ssl_key_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/ssl_ca_file]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/ssl_ca_file]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_syslog]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_syslog]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron/Neutron_config[DEFAULT/use_syslog]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Neutron]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Package[neutron-plugin-ml2]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Package[neutron-plugin-ml2]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Package[neutron-plugin-ml2]: Evaluated in 1.80 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/File[/etc/neutron/plugin.ini]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/File[/etc/neutron/plugin.ini]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/File[/etc/neutron/plugin.ini]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/File[/etc/default/neutron-server]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/File[/etc/default/neutron-server]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/File[/etc/default/neutron-server]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/File_line[/etc/default/neutron-server:NEUTRON_PLUGIN_CONFIG]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/File_line[/etc/default/neutron-server:NEUTRON_PLUGIN_CONFIG]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/File_line[/etc/default/neutron-server:NEUTRON_PLUGIN_CONFIG]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/type_drivers]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/type_drivers]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/type_drivers]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/tenant_network_types]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/tenant_network_types]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/tenant_network_types]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/mechanism_drivers]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/mechanism_drivers]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/mechanism_drivers]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/path_mtu]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/path_mtu]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/path_mtu]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[securitygroup/enable_security_group]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[securitygroup/enable_security_group]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[securitygroup/enable_security_group]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/physical_network_mtus]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron_plugin_ml2[ml2/physical_network_mtus]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Package[openvswitch-datapath-dkms]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Vswitch::Ovs/Package[openvswitch-datapath-dkms]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Package[openvswitch-datapath-dkms]: Evaluated in 2.83 seconds[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Package[linux-headers-3.13.0-116-generic]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Vswitch::Ovs/Package[linux-headers-3.13.0-116-generic]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Package[linux-headers-3.13.0-116-generic]: Evaluated in 18.04 seconds[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Exec[rebuild-ovsmod]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Exec[rebuild-ovsmod]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Package[openvswitch-switch]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Vswitch::Ovs/Package[openvswitch-switch]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Package[openvswitch-switch]: Evaluated in 7.48 seconds[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Service[openvswitch]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Vswitch::Ovs/Service[openvswitch]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: Class[Vswitch::Ovs]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Vswitch::Ovs]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Neutron::Agents::Ml2::Ovs]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron::Agents::Ml2::Ovs]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Package[neutron-ovs-agent]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Package[neutron-ovs-agent]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Package[neutron-ovs-agent]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Package[neutron-ovs-agent]: Evaluated in 2.79 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/polling_interval]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/polling_interval]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/polling_interval]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/polling_interval]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/l2_population]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/l2_population]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/l2_population]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/l2_population]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/arp_responder]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/arp_responder]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/arp_responder]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/arp_responder]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/enable_distributed_routing]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/enable_distributed_routing]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/enable_distributed_routing]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/enable_distributed_routing]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/drop_flows_on_start]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/drop_flows_on_start]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/drop_flows_on_start]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/drop_flows_on_start]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/prevent_arp_spoofing]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/prevent_arp_spoofing]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/prevent_arp_spoofing]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/prevent_arp_spoofing]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/integration_bridge]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/integration_bridge]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/integration_bridge]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/integration_bridge]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[securitygroup/firewall_driver]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[securitygroup/firewall_driver]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[securitygroup/firewall_driver]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[securitygroup/firewall_driver]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/enable_tunneling]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/enable_tunneling]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/enable_tunneling]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/enable_tunneling]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/tunnel_bridge]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/tunnel_bridge]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/tunnel_bridge]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/tunnel_bridge]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/local_ip]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/local_ip]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/local_ip]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[ovs/local_ip]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/tunnel_types]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/tunnel_types]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/tunnel_types]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/tunnel_types]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/vxlan_udp_port]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/vxlan_udp_port]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/vxlan_udp_port]: Scheduling refresh of Service[neutron-ovs-agent-service][0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Neutron_agent_ovs[agent/vxlan_udp_port]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Service[neutron-ovs-agent-service]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Agents::Ml2::Ovs/Service[neutron-ovs-agent-service]: Triggered 'refresh' from 16 events[0m
+[0;32mInfo: /Stage[main]/Neutron::Agents::Ml2::Ovs/Service[neutron-ovs-agent-service]: Evaluated in 0.04 seconds[0m
+[0;32mInfo: Class[Neutron::Agents::Ml2::Ovs]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron::Agents::Ml2::Ovs]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova/images]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova/images]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova/images]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova/instances]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova/instances]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/File[/tmp/nova/instances]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/instances]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/instances]/ensure: defined 'ensure' as 'mounted'[0m
+[0;32mInfo: Computing checksum on file /etc/fstab[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/instances]: Scheduling refresh of Mount[/var/lib/nova/instances][0m
+[0;32mInfo: Mount[/var/lib/nova/instances](provider=parsed): Remounting[0m
+[mNotice: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/instances]: Triggered 'refresh' from 1 events[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/instances]: Scheduling refresh of Mount[/var/lib/nova/instances][0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/instances]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/images]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/images]/ensure: defined 'ensure' as 'mounted'[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/images]: Scheduling refresh of Mount[/var/lib/nova/images][0m
+[0;32mInfo: Mount[/var/lib/nova/images](provider=parsed): Remounting[0m
+[mNotice: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/images]: Triggered 'refresh' from 1 events[0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/images]: Scheduling refresh of Mount[/var/lib/nova/images][0m
+[0;32mInfo: /Stage[main]/Scenario::Openstack::Compute/Mount[/var/lib/nova/images]: Evaluated in 0.01 seconds[0m
+[0;32mInfo: Class[Scenario::Openstack::Compute]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Scenario::Openstack::Compute]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Locales/Package[locales]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Locales/Package[locales]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Locales/File[/etc/default/locale]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Locales/File[/etc/default/locale]/content: 
+--- /etc/default/locale	2017-04-19 19:01:45.647779142 +0000
++++ /tmp/puppet-file20170419-3585-1gbsicn	2017-04-19 19:18:47.356044105 +0000
+@@ -1,2 +1,8 @@
+-# Created by cloud-init v. 0.7.5 on Wed, 19 Apr 2017 19:01:45 +0000
++# INSTALLED BY PUPPET
++# Module:: locales
++# template('locales/default.erb')
++#
+ LANG="en_US.UTF-8"
++LANGUAGE="en_US:en"
++LC_ALL="en_US.UTF-8"
++
+[0m
+[0;32mInfo: Computing checksum on file /etc/default/locale[0m
+[0;32mInfo: /Stage[main]/Locales/File[/etc/default/locale]: Filebucketed /etc/default/locale to puppet with sum fc401105b43961c3cfbcbb38c3750de5[0m
+[mNotice: /Stage[main]/Locales/File[/etc/default/locale]/content: content changed '{md5}fc401105b43961c3cfbcbb38c3750de5' to '{md5}9b5e64b0b8a2be2f6ff9bbfa3cc060fb'[0m
+[0;32mInfo: /Stage[main]/Locales/File[/etc/default/locale]: Evaluated in 0.06 seconds[0m
+[0;32mInfo: Class[Locales]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Locales]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Apt::Setting[list-ubuntu-cloud-archive]: Starting to evaluate the resource[0m
+[0;32mInfo: Apt::Setting[list-ubuntu-cloud-archive]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Apt::Source[ubuntu-cloud-archive]: Starting to evaluate the resource[0m
+[0;32mInfo: Apt::Source[ubuntu-cloud-archive]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Ubuntu]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Openstack_extras::Repo::Debian::Ubuntu]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova::Generic_service[compute]/Package[nova-compute]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova::Generic_service[compute]/Package[nova-compute]: Evaluated in 0.02 seconds[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova::Generic_service[compute]/Service[nova-compute]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Nova::Compute/Nova::Generic_service[compute]/Service[nova-compute]: Triggered 'refresh' from 1 events[0m
+[0;32mInfo: /Stage[main]/Nova::Compute/Nova::Generic_service[compute]/Service[nova-compute]: Evaluated in 1.76 seconds[0m
+[0;32mInfo: Nova::Generic_service[compute]: Starting to evaluate the resource[0m
+[0;32mInfo: Nova::Generic_service[compute]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Nova/Exec[networking-refresh]: Starting to evaluate the resource[0m
+[0;32mInfo: /Stage[main]/Nova/Exec[networking-refresh]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Nova::Compute]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Nova::Compute]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vxlan]/Neutron_plugin_ml2[ml2_type_vxlan/vxlan_group]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vxlan]/Neutron_plugin_ml2[ml2_type_vxlan/vxlan_group]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vxlan]/Neutron_plugin_ml2[ml2_type_vxlan/vxlan_group]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vxlan]/Neutron_plugin_ml2[ml2_type_vxlan/vni_ranges]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vxlan]/Neutron_plugin_ml2[ml2_type_vxlan/vni_ranges]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vxlan]/Neutron_plugin_ml2[ml2_type_vxlan/vni_ranges]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vxlan]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vxlan]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[flat]/Neutron_plugin_ml2[ml2_type_flat/flat_networks]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[flat]/Neutron_plugin_ml2[ml2_type_flat/flat_networks]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[flat]/Neutron_plugin_ml2[ml2_type_flat/flat_networks]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[flat]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[flat]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vlan]/Neutron_plugin_ml2[ml2_type_vlan/network_vlan_ranges]: Starting to evaluate the resource[0m
+[mNotice: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vlan]/Neutron_plugin_ml2[ml2_type_vlan/network_vlan_ranges]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Neutron::Plugins::Ml2/Neutron::Plugins::Ml2::Type_driver[vlan]/Neutron_plugin_ml2[ml2_type_vlan/network_vlan_ranges]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vlan]: Starting to evaluate the resource[0m
+[0;32mInfo: Neutron::Plugins::Ml2::Type_driver[vlan]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Class[Neutron::Plugins::Ml2]: Starting to evaluate the resource[0m
+[0;32mInfo: Class[Neutron::Plugins::Ml2]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Stage[main]: Starting to evaluate the resource[0m
+[0;32mInfo: Stage[main]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Schedule[puppet]: Starting to evaluate the resource[0m
+[0;32mInfo: /Schedule[puppet]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Schedule[hourly]: Starting to evaluate the resource[0m
+[0;32mInfo: /Schedule[hourly]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Schedule[daily]: Starting to evaluate the resource[0m
+[0;32mInfo: /Schedule[daily]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Schedule[weekly]: Starting to evaluate the resource[0m
+[0;32mInfo: /Schedule[weekly]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Schedule[monthly]: Starting to evaluate the resource[0m
+[0;32mInfo: /Schedule[monthly]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Schedule[never]: Starting to evaluate the resource[0m
+[0;32mInfo: /Schedule[never]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: /Filebucket[puppet]: Starting to evaluate the resource[0m
+[0;32mInfo: /Filebucket[puppet]: Evaluated in 0.00 seconds[0m
+[0;32mInfo: Creating state file /opt/puppetlabs/puppet/cache/state/state.yaml[0m
+[mNotice: Applied catalog in 212.92 seconds[0m
