@@ -1,7 +1,7 @@
 This folder contains Puppet logs with the execution time of each steps. To have this measure, replace
-'/opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true'
-with
-'/opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal --evaltrace > /root/puppet.log 2>&1 || true'
+`/opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal > /root/puppet.log 2>&1 || true`<br/>
+with<br/>
+`/opt/puppetlabs/bin/puppet agent -t --server ${controller_name}.openstacklocal --evaltrace > /root/puppet.log 2>&1 || true`<br/>
 in heat templates.
 
 We have 3 log files:
@@ -12,14 +12,14 @@ We have 3 log files:
 These logs can be used to optimize futur deployment by adding more content in the base image.
 
 Here are some usefull commands to have more readable logs :
-Show only lines that show "evaluated time" and only when this time is > 1 sec :
-> cat controller_base_image.log | grep "Evaluated in [1-9]\+\.[0-9]\+ seconds"
+Show only lines that show "evaluated time" and only when this time is > 1 sec :<br/>
+`cat controller_base_image.log | grep "Evaluated in [1-9]\+\.[0-9]\+ seconds"`
 
-Show only times concerning packages ( which seems to be the only part we can optimize by generating a new image )
-> cat controller_base_image.log | grep "Package.*Evaluated"
+Show only times concerning packages ( which seems to be the only part we can optimize by generating a new image )<br/>
+`cat controller_base_image.log | grep "Package.*Evaluated"`
 
 
 By comparing the total time difference between controller_base_image.log and controller_controller_image.log,
-we can see that we gain 249 sec with the OS-Liberty-Puppet_controller image.
+we can see that we gain **249 sec** with the **OS-Liberty-Puppet_controller image**.
 
-Note : All the logs comes from deployment on UC.
+*Note : All the logs comes from deployment on UC.*
